@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'inter': ['Inter', 'sans-serif'],
+				'poppins': ['Poppins', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,6 +66,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Brand colors
+				brand: {
+					primary: '217 91% 60%',
+					secondary: '262 83% 58%',
+					accent: '193 95% 68%',
+					dark: '217 19% 27%',
+					light: '217 32% 92%'
 				}
 			},
 			borderRadius: {
@@ -84,11 +97,23 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'data-flow': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100vw)' }
+				},
+				'binary-rain': {
+					'0%': { transform: 'translateY(-100vh)', opacity: '0' },
+					'10%': { opacity: '1' },
+					'90%': { opacity: '1' },
+					'100%': { transform: 'translateY(100vh)', opacity: '0' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'data-flow': 'data-flow 15s linear infinite',
+				'binary-rain': 'binary-rain 8s linear infinite'
 			}
 		}
 	},
