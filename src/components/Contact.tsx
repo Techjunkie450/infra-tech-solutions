@@ -11,7 +11,7 @@ export const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Us",
-      details: "contact@infratech.com",
+      details: "contact@infrarise.com",
       description: "Send us an email anytime"
     },
     {

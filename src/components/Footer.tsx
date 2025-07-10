@@ -1,10 +1,9 @@
-
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
 
 export const Footer = () => {
   const services = [
     "Web Design & Development",
-    "Mobile App Development",
+    "Mobile App Development", 
     "AWS Cloud Services",
     "Azure Cloud Services",
     "DevOps Services",
@@ -31,7 +30,7 @@ export const Footer = () => {
           <div className="space-y-6">
             <div>
               <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-                InfraTech Solutions
+                InfraRise Technologies
               </h2>
               <p className="text-gray-400 leading-relaxed">
                 Transforming businesses through innovative technology solutions. We deliver cutting-edge IT services that drive growth and success.
@@ -101,7 +100,7 @@ export const Footer = () => {
         
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 InfraTech Solutions. All rights reserved.
+            © 2024 InfraRise Technologies. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>

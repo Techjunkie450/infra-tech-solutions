@@ -17,7 +17,7 @@ export const About = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                About <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">InfraTech Solutions</span>
+                About <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">InfraRise Technologies</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
                 We are a leading technology consulting firm specializing in digital transformation, cloud infrastructure, and custom software development. With over a decade of experience, we help businesses leverage cutting-edge technology to achieve their goals.
