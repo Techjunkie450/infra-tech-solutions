@@ -9,7 +9,9 @@ export const Footer = () => {
     "DevOps Services",
     "IT Infrastructure",
     "Data Center Solutions",
-    "Cybersecurity"
+    "Cybersecurity",
+    "Website Hosting & SSL",
+    "AI & ML Solutions"
   ];
 
   const company = [
@@ -84,7 +86,7 @@ export const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-400">contact@infratech.com</span>
+                <span className="text-gray-400">contact@infrarise.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-blue-400" />
