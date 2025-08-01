@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { Menu, X, Server, Quote, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import infrariseLogo from "@/assets/infrarise-logo.png";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,17 +15,19 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-slate-900/95 backdrop-blur-lg border-b border-gray-700 z-50 shadow-sm">
+    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-lg border-b border-gray-200 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Professional Logo */}
           <div className="flex items-center space-x-3">
-            <img src={infrariseLogo} alt="InfRaRise Technologies" className="h-12 w-auto" />
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+              <Server className="w-7 h-7 text-white" />
+            </div>
             <div>
-              <h1 className="text-2xl font-bold font-poppins text-white">
-                <span>Infra</span><span className="text-cyan-400">R</span><span>ise</span>
+              <h1 className="text-2xl font-bold font-poppins bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                InfraRise
               </h1>
-              <p className="text-xs bg-gradient-to-r from-cyan-400 to-orange-400 bg-clip-text text-transparent font-bold font-inter">TECHNOLOGIES</p>
+              <p className="text-xs text-gray-500 font-medium font-inter">Technologies</p>
             </div>
           </div>
           
@@ -36,7 +37,7 @@ export const Navbar = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-gray-300 hover:text-cyan-400 px-3 py-2 rounded-lg text-sm font-medium font-inter transition-all duration-200 hover:bg-slate-800"
+                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-lg text-sm font-medium font-inter transition-all duration-200 hover:bg-blue-50"
               >
                 {item.label}
               </a>
@@ -47,12 +48,12 @@ export const Navbar = () => {
           <div className="hidden lg:flex items-center space-x-3">
             <Button 
               variant="outline" 
-              className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black font-inter"
+              className="border-blue-600 text-blue-600 hover:bg-blue-50 font-inter"
             >
               <Quote className="w-4 h-4 mr-2" />
               Get Quote
             </Button>
-            <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 font-inter">
+            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 font-inter">
               <Phone className="w-4 h-4 mr-2" />
               Contact Us
             </Button>
@@ -62,7 +63,7 @@ export const Navbar = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-cyan-400 p-2 rounded-lg transition-colors"
+              className="text-gray-700 hover:text-blue-600 p-2 rounded-lg transition-colors"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -71,13 +72,13 @@ export const Navbar = () => {
         
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-slate-800 border-t border-gray-600">
+          <div className="lg:hidden bg-white border-t border-gray-100">
             <div className="px-4 py-6 space-y-3">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="block text-gray-300 hover:text-cyan-400 px-3 py-3 rounded-lg text-base font-medium font-inter hover:bg-slate-700 transition-colors"
+                  className="block text-gray-700 hover:text-blue-600 px-3 py-3 rounded-lg text-base font-medium font-inter hover:bg-blue-50 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
@@ -86,12 +87,12 @@ export const Navbar = () => {
               <div className="pt-4 space-y-3">
                 <Button 
                   variant="outline" 
-                  className="w-full border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black font-inter"
+                  className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 font-inter"
                 >
                   <Quote className="w-4 h-4 mr-2" />
                   Get Quote
                 </Button>
-                <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 font-inter">
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 font-inter">
                   <Phone className="w-4 h-4 mr-2" />
                   Contact Us
                 </Button>
