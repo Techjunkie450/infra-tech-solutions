@@ -4,91 +4,131 @@ import { ArrowRight, Cloud, Smartphone, Globe, Server, Quote, Phone } from "luci
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20 overflow-hidden">
-      {/* Advanced Background Encoding Effects */}
-      <div className="absolute inset-0 opacity-10">
-        {/* Binary Rain Effect */}
-        <div className="absolute inset-0">
-          {Array.from({ length: 15 }).map((_, i) => (
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 pt-20 overflow-hidden">
+      {/* Enhanced IT Infrastructure Background */}
+      <div className="absolute inset-0">
+        {/* Animated Matrix Code Rain */}
+        <div className="absolute inset-0 opacity-15">
+          {Array.from({ length: 25 }).map((_, i) => (
             <div
               key={i}
-              className="absolute text-xs font-mono text-blue-500"
+              className="absolute text-xs font-mono text-green-400"
               style={{
-                left: `${(i * 7) % 100}%`,
-                animationDelay: `${i * 0.5}s`,
-                animation: 'binary-rain 8s linear infinite'
+                left: `${(i * 4) % 100}%`,
+                animationDelay: `${i * 0.3}s`,
+                animation: 'matrix-rain 12s linear infinite'
               }}
             >
-              {Array.from({ length: 20 }).map((_, j) => (
-                <div key={j} className="mb-2">
-                  {Math.random() > 0.5 ? '1' : '0'}
+              {Array.from({ length: 30 }).map((_, j) => (
+                <div key={j} className="mb-1 opacity-80">
+                  {String.fromCharCode(0x30A0 + Math.random() * 96)}
                 </div>
               ))}
             </div>
           ))}
         </div>
 
-        {/* Data Flow Lines */}
-        <div className="absolute inset-0">
-          {Array.from({ length: 5 }).map((_, i) => (
+        {/* Server Data Streams */}
+        <div className="absolute inset-0 opacity-20">
+          {Array.from({ length: 8 }).map((_, i) => (
             <div
               key={i}
-              className="absolute h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent"
+              className="absolute h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
               style={{
-                top: `${20 + i * 15}%`,
-                width: '200px',
-                animationDelay: `${i * 2}s`,
-                animation: 'data-flow 15s linear infinite'
+                top: `${15 + i * 12}%`,
+                width: '300px',
+                animationDelay: `${i * 1.5}s`,
+                animation: 'data-stream 20s linear infinite'
               }}
             />
           ))}
         </div>
 
-        {/* Hexagonal Grid Pattern */}
-        <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 100 100">
+        {/* Network Grid Infrastructure */}
+        <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 200 200">
           <defs>
-            <pattern id="hexPattern" x="0" y="0" width="10" height="8.66" patternUnits="userSpaceOnUse">
-              <polygon points="5,0 10,2.89 10,6.93 5,9.82 0,6.93 0,2.89" fill="none" stroke="url(#hexGradient)" strokeWidth="0.1"/>
+            <pattern id="networkGrid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <circle cx="10" cy="10" r="1" fill="#06b6d4" opacity="0.6"/>
+              <line x1="10" y1="10" x2="30" y2="10" stroke="#06b6d4" strokeWidth="0.5" opacity="0.4"/>
+              <line x1="10" y1="10" x2="10" y2="30" stroke="#06b6d4" strokeWidth="0.5" opacity="0.4"/>
             </pattern>
-            <linearGradient id="hexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3"/>
-              <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.3"/>
-            </linearGradient>
+            <animateTransform attributeName="patternTransform" type="translate" values="0 0; 20 20; 0 0" dur="30s" repeatCount="indefinite"/>
           </defs>
-          <rect width="100%" height="100%" fill="url(#hexPattern)"/>
+          <rect width="100%" height="100%" fill="url(#networkGrid)"/>
         </svg>
 
-        {/* Floating Network Nodes */}
+        {/* Floating Server Icons */}
         <div className="absolute inset-0">
-          {Array.from({ length: 12 }).map((_, i) => (
+          {Array.from({ length: 15 }).map((_, i) => (
             <div
               key={i}
-              className="absolute w-2 h-2 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full animate-pulse"
+              className="absolute"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${i * 0.3}s`,
-                animationDuration: `${2 + Math.random() * 2}s`
+                animationDelay: `${i * 0.5}s`,
+                animation: 'float 6s ease-in-out infinite'
               }}
-            />
+            >
+              <div className="w-3 h-3 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-sm opacity-60 animate-pulse"/>
+            </div>
           ))}
         </div>
 
-        {/* Circuit Connections */}
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800">
+        {/* Advanced Circuit Board Pattern */}
+        <svg className="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 1400 900">
           <defs>
-            <linearGradient id="circuitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.4"/>
-              <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.4"/>
+            <linearGradient id="circuitFlow" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.8"/>
+              <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.6"/>
+              <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.8"/>
             </linearGradient>
           </defs>
-          <path d="M100,200 L300,200 L300,400 L500,400 L500,600" stroke="url(#circuitGrad)" strokeWidth="2" fill="none" className="animate-pulse"/>
-          <path d="M700,150 L900,150 L900,350 L1100,350 L1100,550" stroke="url(#circuitGrad)" strokeWidth="2" fill="none" className="animate-pulse delay-500"/>
-          <path d="M200,650 L400,650 L400,450 L600,450 L600,250" stroke="url(#circuitGrad)" strokeWidth="2" fill="none" className="animate-pulse delay-1000"/>
-          <circle cx="300" cy="200" r="4" fill="url(#circuitGrad)" className="animate-pulse"/>
-          <circle cx="500" cy="400" r="4" fill="url(#circuitGrad)" className="animate-pulse delay-300"/>
-          <circle cx="900" cy="350" r="4" fill="url(#circuitGrad)" className="animate-pulse delay-700"/>
+          
+          {/* Main Data Highways */}
+          <path d="M0,200 L200,200 L200,400 L400,400 L400,600 L600,600 L600,300 L800,300 L800,500 L1000,500 L1000,200 L1200,200 L1200,700 L1400,700" 
+                stroke="url(#circuitFlow)" strokeWidth="3" fill="none" className="animate-pulse">
+            <animate attributeName="stroke-dasharray" values="0,2000;2000,0;0,2000" dur="25s" repeatCount="indefinite"/>
+          </path>
+          
+          <path d="M0,600 L300,600 L300,150 L600,150 L600,450 L900,450 L900,100 L1200,100 L1200,650 L1400,650" 
+                stroke="url(#circuitFlow)" strokeWidth="2" fill="none" className="animate-pulse delay-1000">
+            <animate attributeName="stroke-dasharray" values="0,2000;2000,0;0,2000" dur="30s" repeatCount="indefinite"/>
+          </path>
+          
+          {/* Network Nodes */}
+          <circle cx="200" cy="200" r="6" fill="url(#circuitFlow)" className="animate-pulse"/>
+          <circle cx="400" cy="400" r="5" fill="url(#circuitFlow)" className="animate-pulse delay-500"/>
+          <circle cx="600" cy="300" r="4" fill="url(#circuitFlow)" className="animate-pulse delay-1000"/>
+          <circle cx="800" cy="500" r="5" fill="url(#circuitFlow)" className="animate-pulse delay-1500"/>
+          <circle cx="1000" cy="200" r="6" fill="url(#circuitFlow)" className="animate-pulse delay-2000"/>
+          
+          {/* Data Packets */}
+          <rect x="150" y="195" width="10" height="10" fill="#06b6d4" rx="2" className="animate-pulse">
+            <animateTransform attributeName="transform" type="translate" values="0 0; 1200 0; 0 0" dur="15s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="250" y="595" width="8" height="8" fill="#3b82f6" rx="2" className="animate-pulse delay-700">
+            <animateTransform attributeName="transform" type="translate" values="0 0; 1000 -500; 0 0" dur="20s" repeatCount="indefinite"/>
+          </rect>
         </svg>
+
+        {/* Cloud Infrastructure Symbols */}
+        <div className="absolute inset-0 opacity-20">
+          {['☁', '⚡', '🔒', '📡', '⚙️'].map((symbol, i) => (
+            <div
+              key={i}
+              className="absolute text-2xl text-cyan-400 animate-pulse"
+              style={{
+                left: `${20 + i * 15}%`,
+                top: `${30 + (i % 2) * 40}%`,
+                animationDelay: `${i * 0.8}s`,
+                animationDuration: `${3 + Math.random() * 2}s`
+              }}
+            >
+              {symbol}
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Enhanced Data Wave Background */}
@@ -115,12 +155,12 @@ export const Hero = () => {
         <div className="space-y-8 animate-fade-in">
           {/* Professional Tagline */}
           <div className="space-y-2">
-            <p className="text-lg md:text-xl text-blue-600 font-semibold font-inter tracking-wide uppercase">
+            <p className="text-lg md:text-xl text-cyan-400 font-semibold font-inter tracking-wide uppercase">
               Powering Scalable Tech Infrastructure
             </p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-poppins text-gray-900 leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-poppins text-white leading-tight">
               Transform Your Business with
-              <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Next-Gen IT Solutions
               </span>
             </h1>
@@ -128,7 +168,7 @@ export const Hero = () => {
           
           {/* Enhanced Service Description */}
           <div className="space-y-4">
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-inter">
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-inter">
               From cutting-edge web design and mobile apps to enterprise cloud infrastructure, AI/ML solutions, and secure hosting - we deliver comprehensive IT solutions that drive innovation and growth.
             </p>
             
@@ -179,28 +219,28 @@ export const Hero = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                 <Globe className="w-10 h-10 text-white" />
               </div>
-              <span className="text-sm font-semibold text-gray-700 font-inter">Web Design</span>
+              <span className="text-sm font-semibold text-gray-300 font-inter">Web Design</span>
             </div>
             
             <div className="flex flex-col items-center space-y-3 group">
               <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                 <Smartphone className="w-10 h-10 text-white" />
               </div>
-              <span className="text-sm font-semibold text-gray-700 font-inter">Mobile Apps</span>
+              <span className="text-sm font-semibold text-gray-300 font-inter">Mobile Apps</span>
             </div>
             
             <div className="flex flex-col items-center space-y-3 group">
               <div className="w-20 h-20 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                 <Cloud className="w-10 h-10 text-white" />
               </div>
-              <span className="text-sm font-semibold text-gray-700 font-inter">Cloud Services</span>
+              <span className="text-sm font-semibold text-gray-300 font-inter">Cloud Services</span>
             </div>
             
             <div className="flex flex-col items-center space-y-3 group">
               <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                 <Server className="w-10 h-10 text-white" />
               </div>
-              <span className="text-sm font-semibold text-gray-700 font-inter">Infrastructure</span>
+              <span className="text-sm font-semibold text-gray-300 font-inter">Infrastructure</span>
             </div>
           </div>
         </div>
