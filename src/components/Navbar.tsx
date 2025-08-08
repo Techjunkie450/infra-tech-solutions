@@ -46,13 +46,6 @@ export const Navbar = () => {
           
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-3">
-            <Button 
-              variant="outline" 
-              className="border-blue-600 text-blue-600 hover:bg-blue-50 font-inter"
-            >
-              <Quote className="w-4 h-4 mr-2" />
-              Get Quote
-            </Button>
             <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 font-inter">
               <Phone className="w-4 h-4 mr-2" />
               Contact Us
@@ -85,13 +78,6 @@ export const Navbar = () => {
                 </a>
               ))}
               <div className="pt-4 space-y-3">
-                <Button 
-                  variant="outline" 
-                  className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 font-inter"
-                >
-                  <Quote className="w-4 h-4 mr-2" />
-                  Get Quote
-                </Button>
                 <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 font-inter">
                   <Phone className="w-4 h-4 mr-2" />
                   Contact Us

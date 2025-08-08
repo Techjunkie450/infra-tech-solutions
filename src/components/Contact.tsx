@@ -11,19 +11,19 @@ export const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Us",
-      details: "contact@infrarise.com",
+      details: "hello@infrarisetech.com",
       description: "Send us an email anytime"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
-      details: "+1 (555) 123-4567",
+      details: "+91 8769560336",
       description: "Mon-Fri from 8am to 5pm"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Visit Us",
-      details: "123 Tech Street, Silicon Valley, CA 94000",
+      details: "123, Tech Street, Rajsamand",
       description: "Come say hello at our office"
     },
     {
