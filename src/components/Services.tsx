@@ -27,71 +27,61 @@ export const Services = () => {
       icon: <Globe className="w-8 h-8" />,
       title: "Web Design & Development",
       description: "Custom websites and web applications built with modern technologies, responsive design, and optimized performance for maximum user engagement.",
-      features: ["React & Next.js Development", "Progressive Web Apps (PWA)", "E-commerce Solutions", "CMS Integration & Management"],
-      pricing: "Starting from $2,999"
+      features: ["React & Next.js Development", "Progressive Web Apps (PWA)", "E-commerce Solutions", "CMS Integration & Management"]
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
       title: "Mobile App Development",
       description: "Native and cross-platform mobile applications for iOS and Android with seamless user experience and robust functionality.",
-      features: ["React Native Development", "Flutter Cross-Platform", "Native iOS/Android", "App Store Deployment"],
-      pricing: "Starting from $4,999"
+      features: ["React Native Development", "Flutter Cross-Platform", "Native iOS/Android", "App Store Deployment"]
     },
     {
       icon: <Cloud className="w-8 h-8" />,
       title: "AWS Cloud Services",
       description: "Comprehensive AWS cloud solutions for scalable, secure, and cost-effective infrastructure management with 24/7 monitoring.",
-      features: ["EC2 & Lambda Functions", "S3 Storage & CloudFront CDN", "RDS & DynamoDB Management", "Auto Scaling & Load Balancing"],
-      pricing: "Custom Pricing"
+      features: ["EC2 & Lambda Functions", "S3 Storage & CloudFront CDN", "RDS & DynamoDB Management", "Auto Scaling & Load Balancing"]
     },
     {
       icon: <Monitor className="w-8 h-8" />,
       title: "Azure Cloud Platform",
       description: "Microsoft Azure services for enterprise-grade cloud computing solutions with integrated security and compliance features.",
-      features: ["Azure Virtual Machines", "Azure Functions & Logic Apps", "Cosmos DB & SQL Database", "Azure DevOps Integration"],
-      pricing: "Custom Pricing"
+      features: ["Azure Virtual Machines", "Azure Functions & Logic Apps", "Cosmos DB & SQL Database", "Azure DevOps Integration"]
     },
     {
       icon: <GitBranch className="w-8 h-8" />,
       title: "DevOps Services",
       description: "CI/CD pipelines, automation, and infrastructure as code for streamlined development and rapid deployment cycles.",
-      features: ["Docker & Kubernetes", "Jenkins/GitHub Actions", "Terraform Infrastructure", "Monitoring & Logging Solutions"],
-      pricing: "Starting from $1,999/month"
+      features: ["Docker & Kubernetes", "Jenkins/GitHub Actions", "Terraform Infrastructure", "Monitoring & Logging Solutions"]
     },
     {
       icon: <Server className="w-8 h-8" />,
       title: "IT Infrastructure",
       description: "Complete IT infrastructure setup and management for businesses with proactive monitoring and maintenance support.",
-      features: ["Network Setup & Configuration", "Security Implementation", "Server Management", "Backup & Recovery Solutions"],
-      pricing: "Starting from $999/month"
+      features: ["Network Setup & Configuration", "Security Implementation", "Server Management", "Backup & Recovery Solutions"]
     },
     {
       icon: <Database className="w-8 h-8" />,
       title: "Data Center Solutions",
       description: "Enterprise data center design, implementation, and maintenance services with high availability and disaster recovery.",
-      features: ["Rack & Stack Services", "Power & Cooling Systems", "Network Infrastructure", "Disaster Recovery Planning"],
-      pricing: "Custom Quote Required"
+      features: ["Rack & Stack Services", "Power & Cooling Systems", "Network Infrastructure", "Disaster Recovery Planning"]
     },
     {
       icon: <Shield className="w-8 h-8" />,
       title: "Cybersecurity",
       description: "Comprehensive security solutions to protect your digital assets with threat detection and compliance management.",
-      features: ["Penetration Testing", "Security Audits & Assessments", "Compliance Management", "24/7 Incident Response"],
-      pricing: "Starting from $1,499/month"
+      features: ["Penetration Testing", "Security Audits & Assessments", "Compliance Management", "24/7 Incident Response"]
     },
     {
       icon: <Lock className="w-8 h-8" />,
       title: "Website Hosting & SSL",
       description: "Reliable web hosting solutions with enterprise-grade SSL certificates, CDN integration, and 99.9% uptime guarantee.",
-      features: ["Managed Hosting Services", "SSL Certificates & Security", "Domain Management", "Global CDN Integration"],
-      pricing: "Starting from $99/month"
+      features: ["Managed Hosting Services", "SSL Certificates & Security", "Domain Management", "Global CDN Integration"]
     },
     {
       icon: <Brain className="w-8 h-8" />,
       title: "AI & ML Solutions",
       description: "Cutting-edge artificial intelligence and machine learning implementations for business automation and data insights.",
-      features: ["Custom ML Models", "Natural Language Processing", "Computer Vision Solutions", "Predictive Analytics"],
-      pricing: "Starting from $9,999"
+      features: ["Custom ML Models", "Natural Language Processing", "Computer Vision Solutions", "Predictive Analytics"]
     }
   ];
 
@@ -188,9 +178,6 @@ export const Services = () => {
                 <CardDescription className="text-gray-600 font-inter leading-relaxed">
                   {service.description}
                 </CardDescription>
-                <div className="mt-4 px-4 py-2 bg-blue-50 rounded-lg">
-                  <p className="text-sm font-semibold text-blue-700 font-inter">{service.pricing}</p>
-                </div>
               </CardHeader>
               <CardContent className="relative z-10">
                 <ul className="space-y-3 mb-6">

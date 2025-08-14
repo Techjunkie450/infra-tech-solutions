@@ -94,7 +94,7 @@ export const Footer = () => {
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-blue-400 mt-1" />
-                <span className="text-gray-400">123, Tech Street, Rajsamand</span>
+                <span className="text-gray-400">123 Tech Street, Rajsamand 313301</span>
               </div>
             </div>
           </div>

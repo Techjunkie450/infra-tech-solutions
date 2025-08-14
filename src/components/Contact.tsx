@@ -23,7 +23,7 @@ export const Contact = () => {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Visit Us",
-      details: "123, Tech Street, Rajsamand",
+      details: "123 Tech Street, Rajsamand 313301",
       description: "Come say hello at our office"
     },
     {
