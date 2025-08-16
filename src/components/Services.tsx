@@ -213,7 +213,7 @@ export const Services = () => {
         {/* CTA Section */}
         <div className="text-center mt-16 p-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl text-white">
           <h3 className="text-2xl font-bold font-poppins mb-4">Ready to Transform Your Business?</h3>
-          <p className="text-lg font-inter mb-6 opacity-90">Get a free consultation and custom quote for your project requirements.</p>
+          <p className="text-lg font-inter mb-6 opacity-90">Let's discuss your technology needs and find the perfect solution for your business.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
@@ -221,7 +221,7 @@ export const Services = () => {
               className="border-white text-white hover:bg-white hover:text-blue-600 font-inter"
             >
               <Quote className="w-5 h-5 mr-2" />
-              Get Free Quote
+              Get Started
             </Button>
             <Button 
               size="lg" 
