@@ -12,25 +12,29 @@ export const Contact = () => {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Us",
       details: "hello@infrarisetech.com",
-      description: "Send us an email anytime"
+      description: "Send us an email anytime",
+      href: "mailto:hello@infrarisetech.com"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
       details: "+91 8769560336",
-      description: "Mon-Fri from 8am to 5pm"
+      description: "Mon-Fri from 8am to 5pm",
+      href: "tel:+918769560336"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Visit Us",
       details: "123 Tech Street, Rajsamand 313301",
-      description: "Come say hello at our office"
+      description: "Come say hello at our office",
+      href: "https://maps.google.com/?q=123+Tech+Street+Rajsamand+313301"
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Business Hours",
       details: "Mon - Fri: 8:00 AM - 6:00 PM",
-      description: "Weekend emergency support available"
+      description: "Weekend emergency support available",
+      href: null
     }
   ];
 
@@ -51,16 +55,34 @@ export const Contact = () => {
             {contactInfo.map((info, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white flex-shrink-0">
-                      {info.icon}
+                  {info.href ? (
+                    <a 
+                      href={info.href} 
+                      target={info.href.startsWith('http') ? '_blank' : undefined}
+                      rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="flex items-start space-x-4 group"
+                    >
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform">
+                        {info.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-1">{info.title}</h3>
+                        <p className="text-blue-600 font-medium mb-1 group-hover:underline">{info.details}</p>
+                        <p className="text-sm text-gray-600">{info.description}</p>
+                      </div>
+                    </a>
+                  ) : (
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                        {info.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-1">{info.title}</h3>
+                        <p className="text-blue-600 font-medium mb-1">{info.details}</p>
+                        <p className="text-sm text-gray-600">{info.description}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">{info.title}</h3>
-                      <p className="text-blue-600 font-medium mb-1">{info.details}</p>
-                      <p className="text-sm text-gray-600">{info.description}</p>
-                    </div>
-                  </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
