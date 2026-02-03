@@ -5,128 +5,142 @@ import { ArrowRight, Cloud, Smartphone, Globe, Server, Quote, Phone } from "luci
 export const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 pt-20 overflow-hidden">
-      {/* Enhanced IT Infrastructure Background */}
+      {/* Tech Gadgets Background */}
       <div className="absolute inset-0">
-        {/* Animated Matrix Code Rain */}
-        <div className="absolute inset-0 opacity-15">
-          {Array.from({ length: 25 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute text-xs font-mono text-green-400"
-              style={{
-                left: `${(i * 4) % 100}%`,
-                animationDelay: `${i * 0.3}s`,
-                animation: 'matrix-rain 12s linear infinite'
-              }}
-            >
-              {Array.from({ length: 30 }).map((_, j) => (
-                <div key={j} className="mb-1 opacity-80">
-                  {String.fromCharCode(0x30A0 + Math.random() * 96)}
-                </div>
-              ))}
-            </div>
-          ))}
+        {/* Floating Tech Gadgets */}
+        <div className="absolute inset-0 opacity-30">
+          {/* Laptop */}
+          <div className="absolute animate-float" style={{ left: '5%', top: '15%', animationDelay: '0s' }}>
+            <svg className="w-16 h-16 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <rect x="2" y="4" width="20" height="12" rx="2" />
+              <path d="M1 16h22l-1 4H2l-1-4z" />
+              <path d="M6 8h12M6 11h8" strokeWidth="1" opacity="0.5" />
+            </svg>
+          </div>
+          
+          {/* Smartphone */}
+          <div className="absolute animate-float" style={{ left: '85%', top: '20%', animationDelay: '1s' }}>
+            <svg className="w-12 h-12 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <rect x="5" y="2" width="14" height="20" rx="2" />
+              <line x1="12" y1="18" x2="12" y2="18" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </div>
+          
+          {/* Server Rack */}
+          <div className="absolute animate-float" style={{ left: '15%', top: '70%', animationDelay: '2s' }}>
+            <svg className="w-14 h-14 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <rect x="2" y="2" width="20" height="6" rx="1" />
+              <rect x="2" y="9" width="20" height="6" rx="1" />
+              <rect x="2" y="16" width="20" height="6" rx="1" />
+              <circle cx="6" cy="5" r="1" fill="currentColor" />
+              <circle cx="6" cy="12" r="1" fill="currentColor" />
+              <circle cx="6" cy="19" r="1" fill="currentColor" />
+            </svg>
+          </div>
+          
+          {/* Cloud Icon */}
+          <div className="absolute animate-float" style={{ left: '80%', top: '65%', animationDelay: '0.5s' }}>
+            <svg className="w-20 h-20 text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z" />
+            </svg>
+          </div>
+          
+          {/* CPU Chip */}
+          <div className="absolute animate-float" style={{ left: '45%', top: '8%', animationDelay: '1.5s' }}>
+            <svg className="w-14 h-14 text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <rect x="4" y="4" width="16" height="16" rx="2" />
+              <rect x="8" y="8" width="8" height="8" rx="1" />
+              <line x1="2" y1="9" x2="4" y2="9" />
+              <line x1="2" y1="15" x2="4" y2="15" />
+              <line x1="20" y1="9" x2="22" y2="9" />
+              <line x1="20" y1="15" x2="22" y2="15" />
+              <line x1="9" y1="2" x2="9" y2="4" />
+              <line x1="15" y1="2" x2="15" y2="4" />
+              <line x1="9" y1="20" x2="9" y2="22" />
+              <line x1="15" y1="20" x2="15" y2="22" />
+            </svg>
+          </div>
+          
+          {/* Router/Wifi */}
+          <div className="absolute animate-float" style={{ left: '70%', top: '35%', animationDelay: '2.5s' }}>
+            <svg className="w-12 h-12 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M5 12.55a11 11 0 0114 0" />
+              <path d="M8.53 16.11a6 6 0 016.95 0" />
+              <circle cx="12" cy="20" r="1" fill="currentColor" />
+            </svg>
+          </div>
+          
+          {/* Database */}
+          <div className="absolute animate-float" style={{ left: '25%', top: '40%', animationDelay: '3s' }}>
+            <svg className="w-10 h-10 text-yellow-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <ellipse cx="12" cy="5" rx="9" ry="3" />
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+            </svg>
+          </div>
+          
+          {/* Security Shield */}
+          <div className="absolute animate-float" style={{ left: '60%', top: '75%', animationDelay: '1.2s' }}>
+            <svg className="w-12 h-12 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+          </div>
+          
+          {/* Monitor */}
+          <div className="absolute animate-float" style={{ left: '35%', top: '80%', animationDelay: '0.8s' }}>
+            <svg className="w-14 h-14 text-pink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+          </div>
+          
+          {/* Code Brackets */}
+          <div className="absolute animate-float" style={{ left: '92%', top: '45%', animationDelay: '2.2s' }}>
+            <svg className="w-10 h-10 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <polyline points="16,18 22,12 16,6" />
+              <polyline points="8,6 2,12 8,18" />
+            </svg>
+          </div>
         </div>
 
-        {/* Server Data Streams */}
-        <div className="absolute inset-0 opacity-20">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
-              style={{
-                top: `${15 + i * 12}%`,
-                width: '300px',
-                animationDelay: `${i * 1.5}s`,
-                animation: 'data-stream 20s linear infinite'
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Network Grid Infrastructure */}
-        <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 200 200">
+        {/* Connection Lines */}
+        <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1400 900">
           <defs>
-            <pattern id="networkGrid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-              <circle cx="10" cy="10" r="1" fill="#06b6d4" opacity="0.6"/>
-              <line x1="10" y1="10" x2="30" y2="10" stroke="#06b6d4" strokeWidth="0.5" opacity="0.4"/>
-              <line x1="10" y1="10" x2="10" y2="30" stroke="#06b6d4" strokeWidth="0.5" opacity="0.4"/>
-            </pattern>
-            <animateTransform attributeName="patternTransform" type="translate" values="0 0; 20 20; 0 0" dur="30s" repeatCount="indefinite"/>
+            <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.6"/>
+              <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.4"/>
+              <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.6"/>
+            </linearGradient>
           </defs>
-          <rect width="100%" height="100%" fill="url(#networkGrid)"/>
+          <path d="M70,135 Q400,300 630,72" stroke="url(#lineGrad)" strokeWidth="2" fill="none" strokeDasharray="8,8">
+            <animate attributeName="stroke-dashoffset" values="0;-100" dur="10s" repeatCount="indefinite"/>
+          </path>
+          <path d="M1190,180 Q900,400 980,585" stroke="url(#lineGrad)" strokeWidth="2" fill="none" strokeDasharray="8,8">
+            <animate attributeName="stroke-dashoffset" values="0;-100" dur="12s" repeatCount="indefinite"/>
+          </path>
+          <path d="M210,630 Q500,500 840,675" stroke="url(#lineGrad)" strokeWidth="2" fill="none" strokeDasharray="8,8">
+            <animate attributeName="stroke-dashoffset" values="0;-100" dur="15s" repeatCount="indefinite"/>
+          </path>
+          <path d="M350,360 Q600,200 980,315" stroke="url(#lineGrad)" strokeWidth="2" fill="none" strokeDasharray="8,8">
+            <animate attributeName="stroke-dashoffset" values="0;-100" dur="8s" repeatCount="indefinite"/>
+          </path>
         </svg>
 
-        {/* Floating Server Icons */}
+        {/* Glowing Particles */}
         <div className="absolute inset-0">
-          {Array.from({ length: 15 }).map((_, i) => (
+          {Array.from({ length: 20 }).map((_, i) => (
             <div
               key={i}
-              className="absolute"
+              className="absolute w-2 h-2 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 opacity-40"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${i * 0.5}s`,
-                animation: 'float 6s ease-in-out infinite'
+                animation: `float ${4 + Math.random() * 4}s ease-in-out infinite`,
+                animationDelay: `${i * 0.3}s`
               }}
-            >
-              <div className="w-3 h-3 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-sm opacity-60 animate-pulse"/>
-            </div>
-          ))}
-        </div>
-
-        {/* Advanced Circuit Board Pattern */}
-        <svg className="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 1400 900">
-          <defs>
-            <linearGradient id="circuitFlow" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.8"/>
-              <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.6"/>
-              <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.8"/>
-            </linearGradient>
-          </defs>
-          
-          {/* Main Data Highways */}
-          <path d="M0,200 L200,200 L200,400 L400,400 L400,600 L600,600 L600,300 L800,300 L800,500 L1000,500 L1000,200 L1200,200 L1200,700 L1400,700" 
-                stroke="url(#circuitFlow)" strokeWidth="3" fill="none" className="animate-pulse">
-            <animate attributeName="stroke-dasharray" values="0,2000;2000,0;0,2000" dur="25s" repeatCount="indefinite"/>
-          </path>
-          
-          <path d="M0,600 L300,600 L300,150 L600,150 L600,450 L900,450 L900,100 L1200,100 L1200,650 L1400,650" 
-                stroke="url(#circuitFlow)" strokeWidth="2" fill="none" className="animate-pulse delay-1000">
-            <animate attributeName="stroke-dasharray" values="0,2000;2000,0;0,2000" dur="30s" repeatCount="indefinite"/>
-          </path>
-          
-          {/* Network Nodes */}
-          <circle cx="200" cy="200" r="6" fill="url(#circuitFlow)" className="animate-pulse"/>
-          <circle cx="400" cy="400" r="5" fill="url(#circuitFlow)" className="animate-pulse delay-500"/>
-          <circle cx="600" cy="300" r="4" fill="url(#circuitFlow)" className="animate-pulse delay-1000"/>
-          <circle cx="800" cy="500" r="5" fill="url(#circuitFlow)" className="animate-pulse delay-1500"/>
-          <circle cx="1000" cy="200" r="6" fill="url(#circuitFlow)" className="animate-pulse delay-2000"/>
-          
-          {/* Data Packets */}
-          <rect x="150" y="195" width="10" height="10" fill="#06b6d4" rx="2" className="animate-pulse">
-            <animateTransform attributeName="transform" type="translate" values="0 0; 1200 0; 0 0" dur="15s" repeatCount="indefinite"/>
-          </rect>
-          <rect x="250" y="595" width="8" height="8" fill="#3b82f6" rx="2" className="animate-pulse delay-700">
-            <animateTransform attributeName="transform" type="translate" values="0 0; 1000 -500; 0 0" dur="20s" repeatCount="indefinite"/>
-          </rect>
-        </svg>
-
-        {/* Cloud Infrastructure Symbols */}
-        <div className="absolute inset-0 opacity-20">
-          {['☁', '⚡', '🔒', '📡', '⚙️'].map((symbol, i) => (
-            <div
-              key={i}
-              className="absolute text-2xl text-cyan-400 animate-pulse"
-              style={{
-                left: `${20 + i * 15}%`,
-                top: `${30 + (i % 2) * 40}%`,
-                animationDelay: `${i * 0.8}s`,
-                animationDuration: `${3 + Math.random() * 2}s`
-              }}
-            >
-              {symbol}
-            </div>
+            />
           ))}
         </div>
       </div>

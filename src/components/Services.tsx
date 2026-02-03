@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
@@ -11,14 +10,9 @@ import {
   Shield,
   Zap,
   Monitor,
-  Code,
-  Palette,
-  Cpu,
   Lock,
   Brain,
-  Workflow,
-  ArrowRight,
-  Quote
+  ArrowRight
 } from "lucide-react";
 
 export const Services = () => {
@@ -188,23 +182,13 @@ export const Services = () => {
                     </li>
                   ))}
                 </ul>
-                <div className="flex gap-2">
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="flex-1 border-blue-600 text-blue-600 hover:bg-blue-50 font-inter"
-                  >
-                    <Quote className="w-4 h-4 mr-1" />
-                    Quote
-                  </Button>
-                  <Button 
-                    size="sm" 
-                    className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 font-inter"
-                  >
-                    Learn More
-                    <ArrowRight className="w-4 h-4 ml-1" />
-                  </Button>
-                </div>
+                <Button 
+                  size="sm" 
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 font-inter"
+                >
+                  Learn More
+                  <ArrowRight className="w-4 h-4 ml-1" />
+                </Button>
               </CardContent>
             </Card>
           ))}
@@ -214,23 +198,13 @@ export const Services = () => {
         <div className="text-center mt-16 p-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl text-white">
           <h3 className="text-2xl font-bold font-poppins mb-4">Ready to Transform Your Business?</h3>
           <p className="text-lg font-inter mb-6 opacity-90">Let's discuss your technology needs and find the perfect solution for your business.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-blue-600 font-inter"
-            >
-              <Quote className="w-5 h-5 mr-2" />
-              Get Started
-            </Button>
-            <Button 
-              size="lg" 
-              className="bg-white text-blue-600 hover:bg-gray-100 font-inter"
-            >
-              Schedule Consultation
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </div>
+          <Button 
+            size="lg" 
+            className="bg-white text-blue-600 hover:bg-gray-100 font-inter"
+          >
+            Schedule Consultation
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
         </div>
       </div>
     </section>
