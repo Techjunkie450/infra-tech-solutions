@@ -13,9 +13,9 @@ export const Portfolio = () => {
       tags: ["React", "Node.js", "AWS", "PostgreSQL"]
     },
     {
-      title: "Mobile Banking App",
+      title: "Mobile App",
       category: "Mobile Development",
-      description: "Secure mobile banking application with biometric authentication",
+      description: "Secure mobile application with biometric authentication and seamless user experience",
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=300&fit=crop",
       tags: ["React Native", "Firebase", "Biometrics", "Encryption"]
     },
@@ -37,14 +37,14 @@ export const Portfolio = () => {
       title: "Data Center Setup",
       category: "Infrastructure",
       description: "Complete data center design and implementation for financial services",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1558494949-ef010c3d89d0?w=500&h=300&fit=crop",
       tags: ["Networking", "Security", "Backup", "Monitoring"]
     },
     {
       title: "Healthcare Portal",
       category: "Web Development",
       description: "HIPAA-compliant patient management system with telemedicine features",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=500&h=300&fit=crop",
       tags: ["Vue.js", "Python", "Azure", "HIPAA"]
     }
   ];
