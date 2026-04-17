@@ -1,9 +1,9 @@
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, Server } from "lucide-react";
 
 export const Footer = () => {
   const services = [
     "Web Design & Development",
-    "Mobile App Development", 
+    "Mobile App Development",
     "AWS Cloud Services",
     "Azure Cloud Services",
     "DevOps Services",
@@ -11,103 +11,85 @@ export const Footer = () => {
     "Data Center Solutions",
     "Cybersecurity",
     "Website Hosting & SSL",
-    "AI & ML Solutions"
+    "AI & ML Solutions",
   ];
 
   const company = [
-    "About Us",
-    "Our Team",
-    "Careers",
-    "Contact",
-    "Blog",
-    "Case Studies",
-    "Testimonials",
-    "Privacy Policy"
+    { label: "About Us", href: "#about" },
+    { label: "Services", href: "#services" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "Contact", href: "#contact" },
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-foreground text-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="space-y-6">
-            <div>
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-                InfraRise Technologies
-              </h2>
-              <p className="text-gray-400 leading-relaxed">
-                Transforming businesses through innovative technology solutions. We deliver cutting-edge IT services that drive growth and success.
-              </p>
+            <div className="flex items-center space-x-3">
+              <div className="w-11 h-11 bg-gradient-primary rounded-xl flex items-center justify-center">
+                <Server className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <h2 className="text-xl font-bold text-gradient-primary">InfraRise Technologies</h2>
             </div>
-            
-            <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 transition-colors">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
+            <p className="text-background/70 leading-relaxed text-sm">
+              Transforming businesses through innovative technology solutions — cloud, web, mobile, DevOps, AI/ML and more.
+            </p>
+            <div className="flex space-x-3">
+              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
+                <a key={i} href="#" aria-label="Social link" className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                  <Icon className="w-5 h-5" />
+                </a>
+              ))}
             </div>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold mb-6">Services</h3>
-            <ul className="space-y-3">
-              {services.map((service, index) => (
-                <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    {service}
-                  </a>
+            <h3 className="text-lg font-semibold mb-5">Services</h3>
+            <ul className="space-y-2.5">
+              {services.map((service) => (
+                <li key={service}>
+                  <a href="#services" className="text-background/70 hover:text-background text-sm transition-colors">{service}</a>
                 </li>
               ))}
             </ul>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold mb-6">Company</h3>
-            <ul className="space-y-3">
-              {company.map((item, index) => (
-                <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    {item}
-                  </a>
+            <h3 className="text-lg font-semibold mb-5">Company</h3>
+            <ul className="space-y-2.5">
+              {company.map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} className="text-background/70 hover:text-background text-sm transition-colors">{item.label}</a>
                 </li>
               ))}
             </ul>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold mb-6">Contact Info</h3>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-400">hello@infrarisetech.com</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-400">+91 8769560336</span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-blue-400 mt-1" />
-                <span className="text-gray-400">123 Tech Street, Rajsamand 313301</span>
-              </div>
+            <h3 className="text-lg font-semibold mb-5">Contact Info</h3>
+            <div className="space-y-4 text-sm">
+              <a href="mailto:hello@infrarisetech.com" className="flex items-center space-x-3 text-background/70 hover:text-background">
+                <Mail className="w-5 h-5 text-primary" />
+                <span>hello@infrarisetech.com</span>
+              </a>
+              <a href="tel:+918769560336" className="flex items-center space-x-3 text-background/70 hover:text-background">
+                <Phone className="w-5 h-5 text-primary" />
+                <span>+91 8769560336</span>
+              </a>
+              <a href="https://maps.google.com/?q=Rajsamand+313301" target="_blank" rel="noopener noreferrer" className="flex items-start space-x-3 text-background/70 hover:text-background">
+                <MapPin className="w-5 h-5 text-primary mt-0.5" />
+                <span>Rajsamand 313301, India</span>
+              </a>
             </div>
           </div>
         </div>
-        
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
-            © 2024 InfraRise Technologies. All rights reserved.
-          </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+
+        <div className="border-t border-background/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-background/60 text-sm">© {new Date().getFullYear()} InfraRise Technologies. All rights reserved.</p>
+          <div className="flex space-x-6">
+            <a href="#" className="text-background/60 hover:text-background text-sm transition-colors">Terms of Service</a>
+            <a href="#" className="text-background/60 hover:text-background text-sm transition-colors">Privacy Policy</a>
           </div>
         </div>
       </div>
