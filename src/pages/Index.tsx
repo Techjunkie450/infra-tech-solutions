@@ -53,10 +53,14 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>InfraRise Technologies | IT Infrastructure, Cloud & Web Development</title>
+        <title>InfraRise Technologies | DevOps, Linux, CI/CD, AWS & Azure Cloud</title>
         <meta
           name="description"
-          content="InfraRise Technologies delivers web & mobile development, AWS/Azure cloud, DevOps, AI/ML, cybersecurity and enterprise IT infrastructure services."
+          content="InfraRise Technologies delivers DevOps, Linux administration & SUSE Linux upgrades, CI/CD pipelines, server management, AWS/Azure cloud, web & mobile development, AI/ML and cybersecurity services."
+        />
+        <meta
+          name="keywords"
+          content="DevOps services, Linux upgrade, SUSE Linux, CI/CD pipelines, server management, Linux administration, AWS cloud, Azure cloud, Kubernetes, Docker, Terraform, Jenkins, IT infrastructure, web development, mobile apps, AI ML, cybersecurity, InfraRise Technologies"
         />
         <link rel="canonical" href={siteUrl + "/"} />
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -65,20 +69,20 @@ const Index = () => {
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="InfraRise Technologies" />
-        <meta property="og:title" content="InfraRise Technologies | Scalable IT Infrastructure & Cloud" />
+        <meta property="og:title" content="InfraRise Technologies | DevOps, Linux, CI/CD & Cloud Experts" />
         <meta
           property="og:description"
-          content="End-to-end IT solutions: web, mobile, cloud (AWS/Azure), DevOps, AI/ML, cybersecurity, and data center services."
+          content="DevOps, Linux & SUSE Linux upgrades, CI/CD, server & cloud (AWS/Azure) infrastructure, web/mobile, AI/ML and cybersecurity."
         />
         <meta property="og:url" content={siteUrl + "/"} />
         <meta property="og:image" content={`${siteUrl}/og-image.png`} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="InfraRise Technologies | IT Infrastructure & Cloud" />
+        <meta name="twitter:title" content="InfraRise Technologies | DevOps, Linux & Cloud" />
         <meta
           name="twitter:description"
-          content="Scalable web, mobile, cloud, DevOps, AI/ML, and cybersecurity services."
+          content="DevOps, Linux/SUSE upgrades, CI/CD, AWS/Azure cloud, web, mobile, AI/ML and cybersecurity."
         />
         <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
 

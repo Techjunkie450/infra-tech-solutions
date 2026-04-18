@@ -52,16 +52,16 @@ export const Hero = () => {
           </div>
 
           {/* Service highlights */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 max-w-4xl mx-auto">
             {[
               { Icon: Globe, label: "Web Design" },
               { Icon: Smartphone, label: "Mobile Apps" },
               { Icon: Cloud, label: "Cloud Services" },
               { Icon: Server, label: "Infrastructure" },
             ].map(({ Icon, label }) => (
-              <div key={label} className="flex flex-col items-center space-y-3 group">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-md">
-                  <Icon className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground" />
+              <div key={label} className="flex flex-col items-center space-y-2 group">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-md">
+                  <Icon className="w-7 h-7 md:w-8 md:h-8 text-primary-foreground" />
                 </div>
                 <span className="text-sm font-semibold text-foreground">{label}</span>
               </div>
