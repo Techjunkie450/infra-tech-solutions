@@ -105,7 +105,7 @@ const TechCube = ({ progress, accentHsl }: { progress: number; accentHsl: string
           transform: `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`,
         }}
       >
-        {["front", "back", "right", "left", "top", "bottom"].map((face, i) => {
+        {(["front", "back", "right", "left", "top", "bottom"] as const).map((face, i) => {
           const t: Record<string, string> = {
             front: "translateZ(110px)",
             back: "rotateY(180deg) translateZ(110px)",
@@ -114,10 +114,11 @@ const TechCube = ({ progress, accentHsl }: { progress: number; accentHsl: string
             top: "rotateX(90deg) translateZ(110px)",
             bottom: "rotateX(-90deg) translateZ(110px)",
           };
+          const svc = services[i % services.length];
           return (
             <div
               key={face}
-              className="absolute inset-0 rounded-2xl border backdrop-blur-sm flex items-center justify-center"
+              className="absolute inset-0 rounded-2xl border backdrop-blur-sm flex flex-col items-center justify-center gap-2 p-3"
               style={{
                 transform: t[face],
                 backfaceVisibility: "hidden",
@@ -127,14 +128,19 @@ const TechCube = ({ progress, accentHsl }: { progress: number; accentHsl: string
                 transition: "border-color 0.7s, background 0.7s, box-shadow 0.7s",
               }}
             >
-              <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 100 100">
+              <svg className="absolute inset-0 w-full h-full opacity-25" viewBox="0 0 100 100">
                 <line x1="20" y1="50" x2="80" y2="50" stroke={`hsl(${accentHsl})`} strokeWidth="0.5" />
                 <line x1="50" y1="20" x2="50" y2="80" stroke={`hsl(${accentHsl})`} strokeWidth="0.5" />
-                <circle cx="50" cy="50" r="3" fill={`hsl(${accentHsl})`} opacity="0.6" />
-                <rect x="35" y="35" width="30" height="30" rx="3" fill="none" stroke={`hsl(${accentHsl})`} strokeWidth="0.5" opacity="0.5" />
+                <rect x="20" y="20" width="60" height="60" rx="4" fill="none" stroke={`hsl(${accentHsl})`} strokeWidth="0.4" opacity="0.5" />
               </svg>
               <div className="relative z-10" style={{ color: `hsl(${accentHsl})` }}>
-                {services[i % services.length]?.icon}
+                {svc?.icon}
+              </div>
+              <div
+                className="relative z-10 text-[10px] md:text-xs font-mono font-bold tracking-[0.15em] text-center px-2"
+                style={{ color: `hsl(${accentHsl})` }}
+              >
+                {svc?.keyword}
               </div>
             </div>
           );
@@ -252,15 +258,15 @@ export const Services = () => {
         </div>
 
         {/* Header */}
-        <div className="absolute top-10 md:top-14 left-1/2 -translate-x-1/2 text-center px-4 z-10">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+        <div className="absolute top-4 md:top-6 left-1/2 -translate-x-1/2 text-center px-4 z-10 w-full">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground">
             Our <span className="text-gradient-primary">Services</span>
           </h2>
-          <p className="text-sm md:text-base text-muted-foreground mt-2">Scroll to explore our full capabilities</p>
+          <p className="text-xs md:text-sm text-muted-foreground mt-1">Scroll to explore our full capabilities</p>
         </div>
 
         {/* Main layout */}
-        <div className="h-full flex items-center justify-center px-4 md:px-20 pt-24 md:pt-0">
+        <div className="h-full flex items-center justify-center px-4 md:px-20 pt-20 md:pt-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 items-center max-w-7xl w-full">
             {/* Left: info */}
             <div className="order-2 md:order-1 text-center md:text-left">
