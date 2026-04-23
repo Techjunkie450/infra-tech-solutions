@@ -10,9 +10,11 @@ import { WhyChoose } from "@/components/WhyChoose";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
+import { useReveal } from "@/hooks/use-reveal";
 
 const Index = () => {
   const siteUrl = "https://infra-tech-solutions.lovable.app";
+  useReveal();
 
   const orgJsonLd = {
     "@context": "https://schema.org",
