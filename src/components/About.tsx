@@ -3,16 +3,16 @@ import { Users, Award, Clock, Globe, CheckCircle2 } from "lucide-react";
 
 export const About = () => {
   const stats = [
-    { icon: <Users className="w-7 h-7" />, number: "500+", label: "Projects Completed" },
-    { icon: <Award className="w-7 h-7" />, number: "98%", label: "Client Satisfaction" },
-    { icon: <Clock className="w-7 h-7" />, number: "24/7", label: "Support Available" },
-    { icon: <Globe className="w-7 h-7" />, number: "50+", label: "Countries Served" },
+    { icon: <Users className="w-7 h-7" />, number: "8+", label: "Companies Trust Us" },
+    { icon: <Award className="w-7 h-7" />, number: "50+", label: "Projects Delivered" },
+    { icon: <Clock className="w-7 h-7" />, number: "24/7", label: "Critical Support" },
+    { icon: <Globe className="w-7 h-7" />, number: "25+", label: "Years Combined Exp." },
   ];
 
   const benefits = [
-    { title: "Proven Expertise", desc: "Industry-certified professionals with deep technical knowledge." },
-    { title: "Scalable Solutions", desc: "Future-ready architecture that grows with your business." },
-    { title: "24/7 Support", desc: "Round-the-clock monitoring and incident response services." },
+    { title: "One Trusted Partner", desc: "Web, mobile, cloud, security — all under one roof. No more juggling 5+ vendors." },
+    { title: "Founder-Led Delivery", desc: "Our founders are hands-on with every client. Real engineers, real ownership." },
+    { title: "Transparent & Flexible", desc: "Honest pricing, no long-term lock-ins, 24/7 critical support when you need it." },
   ];
 
   return (
@@ -29,10 +29,10 @@ export const About = () => {
                 About <span className="text-gradient-primary">InfraRise Technologies</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                We are a leading technology consulting firm specializing in digital transformation, cloud infrastructure, and custom software development. With over a decade of experience, we help businesses leverage cutting-edge technology to achieve their goals.
+                We started InfraRise because growing companies waste time and money juggling 5+ vendors for different tech needs. We're the one trusted partner for your entire stack — built and led by engineers who've shipped at scale.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Our team of certified experts delivers enterprise-grade solutions across web, mobile, AWS & Azure cloud, DevOps, AI/ML, and IT infrastructure services.
+                From web and mobile apps to AWS/Azure cloud, DevOps, Linux/SUSE administration, CI/CD, security and AI/ML — founders stay involved end-to-end. Honest pricing, flexible terms, real partnership.
               </p>
             </div>
 

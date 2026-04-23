@@ -109,7 +109,30 @@ export const Contact = () => {
                     <option>IT Infrastructure</option>
                     <option>Data Center Solutions</option>
                     <option>Cybersecurity</option>
+                    <option>Website Hosting & SSL</option>
+                    <option>AI & ML Solutions</option>
                   </select>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="budget">Budget Range</Label>
+                    <select id="budget" className="w-full p-2 border border-input bg-background rounded-md focus:ring-2 focus:ring-ring focus:border-ring">
+                      <option value="">Select range (optional)</option>
+                      <option>Under $5K</option>
+                      <option>$5K – $25K</option>
+                      <option>$25K – $100K</option>
+                      <option>$100K+</option>
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="timeline">Timeline</Label>
+                    <select id="timeline" className="w-full p-2 border border-input bg-background rounded-md focus:ring-2 focus:ring-ring focus:border-ring">
+                      <option value="">Select timeline</option>
+                      <option>Just exploring</option>
+                      <option>Within 3 months</option>
+                      <option>Urgent — ASAP</option>
+                    </select>
+                  </div>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
