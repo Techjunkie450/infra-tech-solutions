@@ -1,5 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Cloud, Smartphone, Globe, Server, GitBranch, Shield, Brain, Database, Calendar, Users, Briefcase, Award } from "lucide-react";
+import {
+  ArrowRight,
+  Cloud,
+  Smartphone,
+  Globe,
+  GitBranch,
+  Shield,
+  Brain,
+  Calendar,
+  Sparkles,
+  Bot,
+  Cpu,
+  Zap,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 
 const cubeFaces = [
@@ -11,12 +24,12 @@ const cubeFaces = [
   { Icon: Brain, label: "AI / ML", color: "280 75% 60%" },
 ];
 
-const HeroCube = () => {
+const HeroVisual = () => {
   const [rotation, setRotation] = useState({ x: -15, y: 0 });
 
   useEffect(() => {
     let raf = 0;
-    let start = performance.now();
+    const start = performance.now();
     const tick = (now: number) => {
       const t = (now - start) / 1000;
       setRotation({ x: -15 + Math.sin(t * 0.6) * 10, y: t * 25 });
@@ -42,40 +55,74 @@ const HeroCube = () => {
         <div className="w-72 h-72 rounded-full bg-primary/30 blur-[100px]" />
       </div>
 
-      {/* Floating service tags around cube */}
-      <div className="absolute top-4 left-2 md:left-8 bg-card border border-border rounded-xl px-4 py-3 shadow-md backdrop-blur-sm" style={{ animation: "float 6s ease-in-out infinite" }}>
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
-            <Award className="w-4 h-4 text-primary-foreground" />
+      {/* AI Assistant glass card */}
+      <div
+        className="absolute top-2 left-0 md:left-2 glass rounded-2xl px-4 py-3 shadow-lg z-20"
+        style={{ animation: "float 6s ease-in-out infinite" }}
+      >
+        <div className="flex items-center gap-3">
+          <div className="relative w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
+            <Bot className="w-5 h-5 text-primary-foreground" />
+            <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-accent border-2 border-card" style={{ animation: "blink 2s ease-in-out infinite" }} />
           </div>
           <div>
-            <p className="text-xs text-muted-foreground">Projects</p>
-            <p className="text-sm font-bold text-foreground">50+ shipped</p>
+            <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-mono">AI Assistant</p>
+            <p className="text-sm font-bold text-foreground flex items-center gap-1">
+              Online <Sparkles className="w-3 h-3 text-accent" />
+            </p>
           </div>
         </div>
       </div>
 
-      <div className="absolute top-8 right-2 md:right-4 bg-card border border-border rounded-xl px-4 py-3 shadow-md backdrop-blur-sm" style={{ animation: "float 6s ease-in-out infinite", animationDelay: "1s" }}>
-        <p className="text-xs text-muted-foreground">24/7</p>
-        <p className="text-sm font-bold text-foreground">critical support</p>
-      </div>
-
-      <div className="absolute bottom-6 left-0 md:left-4 bg-card border border-border rounded-xl px-4 py-3 shadow-md backdrop-blur-sm" style={{ animation: "float 6s ease-in-out infinite", animationDelay: "2s" }}>
+      {/* Neural / ML chip */}
+      <div
+        className="absolute top-6 right-0 md:right-2 glass rounded-2xl px-4 py-3 shadow-lg z-20"
+        style={{ animation: "float 6s ease-in-out infinite", animationDelay: "1s" }}
+      >
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center">
-            <Users className="w-4 h-4 text-accent" />
-          </div>
+          <Cpu className="w-4 h-4 text-primary" />
           <div>
-            <p className="text-xs text-muted-foreground">Trusted by</p>
-            <p className="text-sm font-bold text-foreground">8+ companies</p>
+            <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-mono">Neural Engine</p>
+            <p className="text-sm font-bold text-foreground">ML Ready</p>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-10 right-0 md:right-8 bg-card border border-border rounded-xl px-4 py-3 shadow-md backdrop-blur-sm" style={{ animation: "float 6s ease-in-out infinite", animationDelay: "0.5s" }}>
+      {/* Automation badge */}
+      <div
+        className="absolute bottom-6 left-0 md:left-2 glass rounded-2xl px-4 py-3 shadow-lg z-20"
+        style={{ animation: "float 6s ease-in-out infinite", animationDelay: "2s" }}
+      >
         <div className="flex items-center gap-2">
-          <Database className="w-4 h-4 text-primary" />
-          <span className="text-sm font-bold text-foreground">Full-Stack</span>
+          <Zap className="w-4 h-4 text-accent" />
+          <span className="text-sm font-bold text-foreground">Auto-Scale</span>
+        </div>
+      </div>
+
+      {/* DevOps badge */}
+      <div
+        className="absolute bottom-10 right-0 md:right-4 glass rounded-2xl px-4 py-3 shadow-lg z-20"
+        style={{ animation: "float 6s ease-in-out infinite", animationDelay: "0.5s" }}
+      >
+        <div className="flex items-center gap-2">
+          <GitBranch className="w-4 h-4 text-primary" />
+          <span className="text-sm font-bold text-foreground">CI / CD</span>
+        </div>
+      </div>
+
+      {/* Orbiting AI nodes */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="relative w-2 h-2">
+          {[0, 1, 2].map((i) => (
+            <span
+              key={i}
+              className="absolute w-3 h-3 rounded-full bg-accent shadow-glow"
+              style={{
+                animation: `orbit 12s linear infinite`,
+                animationDelay: `${i * -4}s`,
+              }}
+            />
+          ))}
         </div>
       </div>
 
@@ -133,59 +180,87 @@ export const Hero = () => {
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary/20 blur-3xl" />
         <div className="absolute top-1/3 -right-32 w-[28rem] h-[28rem] rounded-full bg-accent/20 blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 w-80 h-80 rounded-full blur-3xl" style={{ background: "hsl(var(--primary-glow) / 0.2)" }} />
+        <div
+          className="absolute bottom-0 left-1/3 w-80 h-80 rounded-full blur-3xl"
+          style={{ background: "hsl(var(--primary-glow) / 0.2)" }}
+        />
+        {/* Subtle grid */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
+            backgroundSize: "44px 44px",
+          }}
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text column */}
           <div className="space-y-7 text-center lg:text-left" style={{ animation: "fadeSlideIn 0.8s ease-out" }}>
-            <p className="text-xs md:text-sm text-primary font-semibold tracking-[0.2em] uppercase">
-              Full-Service Technology Partner
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Complete Technology Solutions for
-              <span className="block text-gradient-primary">Growing Companies</span>
+            <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs font-semibold tracking-wider uppercase text-primary">
+              <Sparkles className="w-3.5 h-3.5" />
+              AI-Powered Technology Partner
+            </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <span className="text-foreground">Complete Technology Solutions for</span>
+              <span className="block text-gradient-animated">Growing Companies</span>
             </h1>
 
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
-              From web apps to cloud infrastructure. One trusted partner for all your tech needs.{" "}
-              <span className="font-semibold text-foreground">8+ companies</span> trust InfraRise for their entire technology stack.
+              From web apps to cloud infrastructure and intelligent AI automation — one trusted
+              partner for your entire technology stack.
             </p>
 
-            {/* Proof points */}
-            <ul className="space-y-3 max-w-xl mx-auto lg:mx-0">
+            {/* Capability chips (replaces company-count proof points) */}
+            <ul className="flex flex-wrap gap-2 justify-center lg:justify-start max-w-xl mx-auto lg:mx-0">
               {[
-                { Icon: Briefcase, text: "8+ companies trust us across all services" },
-                { Icon: Award, text: "50+ successful projects completed" },
-                { Icon: Users, text: "Founded by full-stack engineers • 25+ years combined experience" },
+                { Icon: Bot, text: "AI & Automation" },
+                { Icon: Cloud, text: "Cloud Infrastructure" },
+                { Icon: GitBranch, text: "DevOps & CI/CD" },
+                { Icon: Shield, text: "Security First" },
               ].map(({ Icon, text }, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm md:text-base text-foreground/90">
-                  <span className="mt-0.5 w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-4 h-4 text-primary" />
-                  </span>
-                  <span>{text}</span>
+                <li
+                  key={i}
+                  className="glass inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs md:text-sm font-medium text-foreground/90"
+                >
+                  <Icon className="w-3.5 h-3.5 text-primary" />
+                  {text}
                 </li>
               ))}
             </ul>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center pt-2">
-              <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 text-primary-foreground px-8 py-6 text-base font-semibold shadow-elegant group">
+              <Button
+                asChild
+                size="lg"
+                className="relative bg-gradient-primary hover:opacity-95 text-primary-foreground px-8 py-6 text-base font-semibold shadow-elegant group animate-pulse-glow transition-transform hover:scale-105"
+              >
                 <a href="#contact">
                   <Calendar className="mr-2 w-5 h-5" />
                   Discuss Your Project
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-base font-semibold">
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="glass border-2 border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-base font-semibold transition-all"
+              >
                 <a href="#portfolio">View Case Studies</a>
               </Button>
             </div>
           </div>
 
-          {/* Cube column */}
-          <div className="flex items-center justify-center min-h-[480px]" style={{ animation: "fadeSlideIn 1s ease-out 0.2s both" }}>
-            <HeroCube />
+          {/* Visual column */}
+          <div
+            className="flex items-center justify-center min-h-[480px]"
+            style={{ animation: "fadeSlideIn 1s ease-out 0.2s both" }}
+          >
+            <HeroVisual />
           </div>
         </div>
       </div>
