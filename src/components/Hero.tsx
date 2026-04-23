@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Cloud, Smartphone, Globe, Server, GitBranch, Shield, Brain, Database, Calendar, Users, Briefcase, Award } from "lucide-react";
+import { ArrowRight, Cloud, Smartphone, Globe, GitBranch, Shield, Brain, Calendar, Sparkles, Bot, Cpu, Zap, Code2 } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const cubeFaces = [
