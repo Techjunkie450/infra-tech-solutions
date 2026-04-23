@@ -6,6 +6,10 @@ import { Portfolio } from "@/components/Portfolio";
 import { Contact } from "@/components/Contact";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { WhyChoose } from "@/components/WhyChoose";
+import { Testimonials } from "@/components/Testimonials";
+import { FAQ } from "@/components/FAQ";
+import { FinalCTA } from "@/components/FinalCTA";
 
 const Index = () => {
   const siteUrl = "https://infra-tech-solutions.lovable.app";
@@ -95,8 +99,12 @@ const Index = () => {
       <main>
         <Hero />
         <Services />
+        <WhyChoose />
         <About />
         <Portfolio />
+        <Testimonials />
+        <FAQ />
+        <FinalCTA />
         <Contact />
       </main>
       <Footer />
