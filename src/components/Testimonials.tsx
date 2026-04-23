@@ -4,23 +4,23 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "InfraRise built our mobile app from scratch. They understood our vision and delivered on time. The app is now generating $50K+ monthly revenue.",
+      "They built our mobile app from scratch, understood our vision and delivered on time. The app is now generating $50K+ monthly revenue.",
     author: "Founder",
-    role: "Mobile App Company",
+    role: "Mobile App Startup",
     accent: "262 70% 55%",
   },
   {
     quote:
       "Migrated our entire infrastructure to AWS. Cut costs by 35% while improving performance. Their team handled everything end-to-end.",
     author: "CTO",
-    role: "Scale-up SaaS",
+    role: "Scale-up SaaS Company",
     accent: "32 95% 50%",
   },
   {
     quote:
       "We started with DevOps consulting. Now they handle our web, mobile, and infrastructure. One vendor we completely trust.",
     author: "VP Engineering",
-    role: "Growth Company",
+    role: "Growth-stage Company",
     accent: "160 84% 39%",
   },
 ];
