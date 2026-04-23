@@ -1,9 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Award, Clock, Globe, CheckCircle2 } from "lucide-react";
+import { Award, Clock, Globe, CheckCircle2 } from "lucide-react";
 
 export const About = () => {
   const stats = [
-    { icon: <Users className="w-7 h-7" />, number: "8+", label: "Companies Trust Us" },
     { icon: <Award className="w-7 h-7" />, number: "50+", label: "Projects Delivered" },
     { icon: <Clock className="w-7 h-7" />, number: "24/7", label: "Critical Support" },
     { icon: <Globe className="w-7 h-7" />, number: "25+", label: "Years Combined Exp." },
