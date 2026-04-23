@@ -20,7 +20,7 @@ const benefits = [
   {
     icon: TrendingUp,
     title: "Proven Results",
-    desc: "8+ companies have scaled with us. Real customers, measurable outcomes. 25+ years combined engineering experience.",
+    desc: "Real customers, measurable outcomes across web, cloud and DevOps — backed by 25+ years of combined engineering experience.",
   },
 ];
 
