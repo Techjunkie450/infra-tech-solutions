@@ -58,6 +58,29 @@ const Index = () => {
     })),
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        q: "Do you provide DevOps services and Kubernetes consulting?",
+        a: "Yes. End-to-end DevOps services, Kubernetes cluster setup, Docker, Terraform, Jenkins/GitHub Actions CI/CD pipeline setup, observability and 24/7 SRE support.",
+      },
+      {
+        q: "Can you handle Linux administration and SAP on SUSE Linux?",
+        a: "Yes. Linux administration, SUSE Linux Enterprise Server upgrades, SAP on SUSE Linux deployments, server patching & maintenance and HA cluster configuration.",
+      },
+      {
+        q: "What technologies do you specialize in?",
+        a: "React, Next.js, React Native, Flutter, AWS, Azure, Kubernetes, Docker, Terraform, Jenkins, Linux/SUSE administration and modern full-stack technologies.",
+      },
+    ].map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -97,6 +120,7 @@ const Index = () => {
         {/* JSON-LD */}
         <script type="application/ld+json">{JSON.stringify(orgJsonLd)}</script>
         <script type="application/ld+json">{JSON.stringify(servicesJsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
       </Helmet>
 
       <Navbar />
