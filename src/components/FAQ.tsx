@@ -2,6 +2,14 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const faqs = [
   {
+    q: "Do you provide DevOps services and Kubernetes consulting?",
+    a: "Yes. We deliver end-to-end DevOps services including Kubernetes cluster setup, Docker containerization, Terraform infrastructure-as-code, Jenkins/GitHub Actions CI/CD pipeline setup, observability and 24/7 SRE support.",
+  },
+  {
+    q: "Can you handle Linux administration and SAP on SUSE Linux?",
+    a: "Absolutely. Our team specializes in Linux administration, SUSE Linux Enterprise Server (SLES) upgrades, SAP on SUSE Linux deployments, kernel tuning, server patching & maintenance, and high-availability cluster configuration.",
+  },
+  {
     q: "What if we only need one service, not full-stack?",
     a: "Perfect. We work with clients on a single service or the full portfolio. Pick what you need now and scale up as you grow.",
   },

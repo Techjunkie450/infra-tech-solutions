@@ -205,12 +205,13 @@ export const Hero = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="text-foreground">Complete Technology Solutions for</span>
+              <span className="text-foreground">DevOps, Linux & Kubernetes Services for</span>
               <span className="block text-gradient-animated">Growing Companies</span>
             </h1>
 
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
-              From web apps to cloud infrastructure and intelligent AI automation — one trusted
+              DevOps services, Linux administration, Kubernetes, SAP on SUSE Linux, CI/CD pipeline
+              setup, server patching & maintenance, website and mobile app development — one trusted
               partner for your entire technology stack.
             </p>
 
