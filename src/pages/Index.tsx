@@ -10,6 +10,7 @@ import { WhyChoose } from "@/components/WhyChoose";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
+import { ChatBot } from "@/components/ChatBot";
 import { useReveal } from "@/hooks/use-reveal";
 
 const Index = () => {
@@ -110,6 +111,7 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <ChatBot />
     </div>
   );
 };
