@@ -23,7 +23,7 @@ const Index = () => {
     url: siteUrl,
     logo: `${siteUrl}/favicon.png`,
     description:
-      "InfraRise Technologies — DevOps services, Linux administration, Kubernetes, SAP on SUSE Linux, CI/CD pipeline setup, server patching & maintenance, website development, mobile app development, AWS/Azure cloud, AI/ML, and cybersecurity.",
+      "InfraRise Technologies — Web design, mobile apps, AWS & Azure cloud, DevOps, AI/ML, cybersecurity, and IT infrastructure services.",
     email: "hello@infrarisetech.com",
     telephone: "+91-8769560336",
     address: {
@@ -39,17 +39,15 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "ItemList",
     itemListElement: [
-      "DevOps Services",
-      "Linux Administration",
-      "Kubernetes Services",
-      "SAP on SUSE Linux",
-      "CI/CD Pipeline Setup",
-      "Server Patching & Maintenance",
-      "Website Development Company",
+      "Web Design & Development",
       "Mobile App Development",
       "AWS Cloud Services",
       "Azure Cloud Platform",
+      "DevOps Services",
+      "IT Infrastructure",
+      "Data Center Solutions",
       "Cybersecurity",
+      "Website Hosting & SSL",
       "AI & ML Solutions",
     ].map((name, i) => ({
       "@type": "ListItem",
@@ -58,40 +56,17 @@ const Index = () => {
     })),
   };
 
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        q: "Do you provide DevOps services and Kubernetes consulting?",
-        a: "Yes. End-to-end DevOps services, Kubernetes cluster setup, Docker, Terraform, Jenkins/GitHub Actions CI/CD pipeline setup, observability and 24/7 SRE support.",
-      },
-      {
-        q: "Can you handle Linux administration and SAP on SUSE Linux?",
-        a: "Yes. Linux administration, SUSE Linux Enterprise Server upgrades, SAP on SUSE Linux deployments, server patching & maintenance and HA cluster configuration.",
-      },
-      {
-        q: "What technologies do you specialize in?",
-        a: "React, Next.js, React Native, Flutter, AWS, Azure, Kubernetes, Docker, Terraform, Jenkins, Linux/SUSE administration and modern full-stack technologies.",
-      },
-    ].map(({ q, a }) => ({
-      "@type": "Question",
-      name: q,
-      acceptedAnswer: { "@type": "Answer", text: a },
-    })),
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>DevOps Services, Linux Administration & Kubernetes Experts | InfraRise Technologies</title>
+        <title>InfraRise Technologies | DevOps, Linux, CI/CD, AWS & Azure Cloud</title>
         <meta
           name="description"
-          content="DevOps services, Linux administration, Kubernetes services, SAP on SUSE Linux, CI/CD pipeline setup, server patching & maintenance, website development and mobile app development by InfraRise Technologies."
+          content="InfraRise Technologies delivers DevOps, Linux administration & SUSE Linux upgrades, CI/CD pipelines, server management, AWS/Azure cloud, web & mobile development, AI/ML and cybersecurity services."
         />
         <meta
           name="keywords"
-          content="DevOps services, Linux administration, Kubernetes services, SAP on SUSE Linux, CI/CD pipeline setup, server patching and maintenance, website development company, mobile app development, DevOps company India, Kubernetes services India, Linux support, SAP on SUSE Linux, CI/CD services, AWS cloud, Azure cloud, Docker, Terraform, Jenkins, cybersecurity, InfraRise Technologies"
+          content="DevOps services, Linux upgrade, SUSE Linux, CI/CD pipelines, server management, Linux administration, AWS cloud, Azure cloud, Kubernetes, Docker, Terraform, Jenkins, IT infrastructure, web development, mobile apps, AI ML, cybersecurity, InfraRise Technologies"
         />
         <link rel="canonical" href={siteUrl + "/"} />
         <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -100,27 +75,26 @@ const Index = () => {
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="InfraRise Technologies" />
-        <meta property="og:title" content="DevOps, Linux & Kubernetes Services | SAP on SUSE Linux | InfraRise" />
+        <meta property="og:title" content="InfraRise Technologies | DevOps, Linux, CI/CD & Cloud Experts" />
         <meta
           property="og:description"
-          content="DevOps services, Linux administration, Kubernetes, SAP on SUSE Linux, CI/CD pipeline setup, server patching, website & mobile app development."
+          content="DevOps, Linux & SUSE Linux upgrades, CI/CD, server & cloud (AWS/Azure) infrastructure, web/mobile, AI/ML and cybersecurity."
         />
         <meta property="og:url" content={siteUrl + "/"} />
         <meta property="og:image" content={`${siteUrl}/og-image.png`} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="DevOps, Linux Admin, Kubernetes & SAP on SUSE | InfraRise" />
+        <meta name="twitter:title" content="InfraRise Technologies | DevOps, Linux & Cloud" />
         <meta
           name="twitter:description"
-          content="DevOps, Linux administration, Kubernetes, SAP on SUSE Linux, CI/CD pipelines, server patching, web & mobile development."
+          content="DevOps, Linux/SUSE upgrades, CI/CD, AWS/Azure cloud, web, mobile, AI/ML and cybersecurity."
         />
         <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
 
         {/* JSON-LD */}
         <script type="application/ld+json">{JSON.stringify(orgJsonLd)}</script>
         <script type="application/ld+json">{JSON.stringify(servicesJsonLd)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
       </Helmet>
 
       <Navbar />
