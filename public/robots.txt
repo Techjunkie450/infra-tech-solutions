@@ -1,4 +1,18 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
 
 Sitemap: https://infra-tech-solutions.lovable.app/sitemap.xml
+Host: https://infra-tech-solutions.lovable.app
