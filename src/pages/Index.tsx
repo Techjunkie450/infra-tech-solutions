@@ -178,7 +178,12 @@ const Index = () => {
           content="DevOps, Kubernetes, Linux administration, SAP on SUSE, CI/CD pipelines, server patching, AWS & Azure cloud, website & mobile app development."
         />
         <meta property="og:url" content={siteUrl + "/"} />
-        <meta property="og:image" content={`${siteUrl}/favicon.png?v=2`} />
+        <meta property="og:image" content={`${siteUrl}/og-image.png`} />
+        <meta property="og:image:secure_url" content={`${siteUrl}/og-image.png`} />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="InfraRise Technologies — DevOps, Kubernetes, Linux, SAP on SUSE, CI/CD and Cloud experts" />
         <meta property="og:locale" content="en_IN" />
 
         {/* Twitter */}
@@ -188,7 +193,13 @@ const Index = () => {
           name="twitter:description"
           content="DevOps, Kubernetes, Linux/SAP on SUSE, CI/CD, AWS/Azure cloud, web & mobile development."
         />
-        <meta name="twitter:image" content={`${siteUrl}/favicon.png?v=2`} />
+        <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
+        <meta name="twitter:image:alt" content="InfraRise Technologies — DevOps, Kubernetes, Linux & Cloud experts" />
+
+        {/* hreflang (pattern from github.com) */}
+        <link rel="alternate" hrefLang="en" href={siteUrl + "/"} />
+        <link rel="alternate" hrefLang="x-default" href={siteUrl + "/"} />
+        <meta name="color-scheme" content="light dark" />
 
         {/* JSON-LD */}
         <script type="application/ld+json">{JSON.stringify(orgJsonLd)}</script>
