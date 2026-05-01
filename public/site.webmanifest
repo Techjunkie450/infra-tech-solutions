@@ -1,0 +1,15 @@
+{
+  "name": "InfraRise Technologies",
+  "short_name": "InfraRise",
+  "description": "DevOps, Kubernetes, Linux, SAP on SUSE, CI/CD, AWS & Azure cloud, web & mobile app development.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b1437",
+  "theme_color": "#1d4ed8",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/favicon.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
