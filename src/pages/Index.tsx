@@ -1,5 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import { Hero } from "@/components/Hero";
+import { Product } from "@/components/Product";
+import { Features } from "@/components/Features";
+import { UseCases } from "@/components/UseCases";
+import { Customers } from "@/components/Customers";
 import { Services } from "@/components/Services";
 import { About } from "@/components/About";
 import { Portfolio } from "@/components/Portfolio";
@@ -153,10 +157,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>InfraRise Technologies — DevOps, Kubernetes, Linux & SAP on SUSE Experts</title>
+        <title>InfraRise Cloud — The DevOps platform for production teams | InfraRise Technologies</title>
         <meta
           name="description"
-          content="InfraRise Technologies delivers DevOps services, Kubernetes, Linux administration, SAP on SUSE Linux, CI/CD pipeline setup, server patching, AWS & Azure cloud, website & mobile app development. Get a free consultation."
+          content="InfraRise Cloud is the DevOps platform for teams running production. Unified CI/CD pipelines, managed Kubernetes, SUSE Linux patching and observability. Request early access."
         />
         <meta
           name="keywords"
@@ -212,8 +216,12 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <Services />
+        <Product />
+        <Features />
+        <UseCases />
+        <Customers />
         <WhyChoose />
+        <Services />
         <About />
         <Portfolio />
         <Testimonials />

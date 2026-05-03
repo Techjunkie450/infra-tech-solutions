@@ -201,17 +201,17 @@ export const Hero = () => {
           <div className="space-y-7 text-center lg:text-left" style={{ animation: "fadeSlideIn 0.8s ease-out" }}>
             <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs font-semibold tracking-wider uppercase text-primary">
               <Sparkles className="w-3.5 h-3.5" />
-              AI-Powered Technology Partner
+              Introducing InfraRise Cloud
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="text-foreground">Complete Technology Solutions for</span>
-              <span className="block text-gradient-animated">Growing Companies</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight">
+              <span className="text-foreground">Production-grade infrastructure,</span>
+              <span className="block text-gradient-animated">on autopilot.</span>
             </h1>
 
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
-              From web apps to cloud infrastructure and intelligent AI automation — one trusted
-              partner for your entire technology stack.
+              The DevOps platform for teams running mission-critical workloads. Pipelines, Kubernetes,
+              SUSE Linux patching and observability — unified in one operator-friendly product.
             </p>
 
             {/* Capability chips (replaces company-count proof points) */}
@@ -238,9 +238,9 @@ export const Hero = () => {
                 size="lg"
                 className="relative bg-gradient-primary hover:opacity-95 text-primary-foreground px-8 py-6 text-base font-semibold shadow-elegant group animate-pulse-glow transition-transform hover:scale-105"
               >
-                <a href="#contact">
+                <a href="#product">
                   <Calendar className="mr-2 w-5 h-5" />
-                  Discuss Your Project
+                  Request early access
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
@@ -250,7 +250,7 @@ export const Hero = () => {
                 size="lg"
                 className="glass border-2 border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-base font-semibold transition-all"
               >
-                <a href="#portfolio">View Case Studies</a>
+                <a href="#features">See the platform</a>
               </Button>
             </div>
           </div>
