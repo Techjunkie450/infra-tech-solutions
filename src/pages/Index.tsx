@@ -1,5 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import { Hero } from "@/components/Hero";
+import { Product } from "@/components/Product";
+import { Features } from "@/components/Features";
+import { UseCases } from "@/components/UseCases";
+import { Customers } from "@/components/Customers";
 import { Services } from "@/components/Services";
 import { About } from "@/components/About";
 import { Portfolio } from "@/components/Portfolio";
@@ -212,8 +216,12 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <Services />
+        <Product />
+        <Features />
+        <UseCases />
+        <Customers />
         <WhyChoose />
+        <Services />
         <About />
         <Portfolio />
         <Testimonials />
