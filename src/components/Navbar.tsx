@@ -6,12 +6,12 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { href: "#product", label: "Product" },
-    { href: "#features", label: "Features" },
-    { href: "#use-cases", label: "Use cases" },
-    { href: "#customers", label: "Customers" },
-    { href: "#services", label: "Solutions" },
-    { href: "#contact", label: "Company" },
+    { href: "#services", label: "Services" },
+    { href: "#features", label: "Capabilities" },
+    { href: "#use-cases", label: "Industries" },
+    { href: "#portfolio", label: "Work" },
+    { href: "#about", label: "About" },
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
@@ -41,11 +41,8 @@ export const Navbar = () => {
           </div>
 
           <div className="hidden lg:flex items-center gap-2">
-            <Button asChild variant="ghost" className="text-foreground/80 hover:text-primary">
-              <a href="#contact">Sign in</a>
-            </Button>
             <Button asChild className="bg-gradient-primary hover:opacity-90 text-primary-foreground shadow-md">
-              <a href="#contact"><Phone className="w-4 h-4 mr-2" />Talk to sales</a>
+              <a href="#contact"><Phone className="w-4 h-4 mr-2" />Book a call</a>
             </Button>
           </div>
 
@@ -72,7 +69,7 @@ export const Navbar = () => {
                 </a>
               ))}
               <Button asChild className="w-full bg-gradient-primary text-primary-foreground mt-2">
-                <a href="#contact"><Phone className="w-4 h-4 mr-2" />Talk to sales</a>
+                <a href="#contact"><Phone className="w-4 h-4 mr-2" />Book a call</a>
               </Button>
             </div>
           </div>

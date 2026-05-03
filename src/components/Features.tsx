@@ -6,48 +6,48 @@ import {
 const features = [
   {
     Icon: Workflow,
-    title: "Pipelines",
-    desc: "Drop-in CI/CD across Jenkins, GitHub Actions, GitLab and ArgoCD with policy gates and signed builds.",
+    title: "CI/CD Pipelines",
+    desc: "We design and operate CI/CD pipelines on Jenkins, GitHub Actions, GitLab and ArgoCD — with policy gates and signed builds.",
   },
   {
     Icon: Boxes,
-    title: "Kubernetes",
-    desc: "Managed EKS, AKS and GKE control planes with Helm, GitOps, autoscaling and one-click rollbacks.",
+    title: "Kubernetes Ops",
+    desc: "We set up and manage EKS, AKS and GKE clusters with Helm, GitOps, autoscaling and zero-downtime rollouts.",
   },
   {
     Icon: ShieldCheck,
-    title: "Patching",
-    desc: "Zero-downtime patching for RHEL, SUSE, Ubuntu and CentOS fleets with full audit trails.",
+    title: "Linux Patching",
+    desc: "Scheduled, zero-downtime patching for RHEL, SUSE, Ubuntu and CentOS fleets with full audit trails.",
   },
   {
     Icon: Activity,
-    title: "Observability",
-    desc: "Unified metrics, logs and traces with SLO tracking, anomaly detection and incident routing.",
+    title: "Monitoring & SRE",
+    desc: "We instrument metrics, logs and traces — Prometheus, Grafana, Datadog — and set SLOs your team can actually live with.",
   },
   {
     Icon: Lock,
-    title: "Security",
-    desc: "Image scanning, SBOMs, secret rotation, RBAC and compliance reporting (SOC2, ISO 27001, HIPAA).",
+    title: "Cloud Security",
+    desc: "Image scanning, SBOMs, secret rotation, RBAC and compliance hardening for SOC 2, ISO 27001 and HIPAA.",
   },
   {
     Icon: Server,
     title: "SAP on SUSE",
-    desc: "Production-grade SAP HANA on SUSE Linux Enterprise with HA clusters and certified maintenance.",
+    desc: "Production-grade SAP HANA on SUSE Linux Enterprise — HA clusters, kernel patching and certified maintenance.",
   },
   {
     Icon: Plug,
-    title: "Integrations",
-    desc: "100+ integrations: AWS, Azure, GCP, Datadog, Slack, PagerDuty, Vault, Snyk, Terraform Cloud.",
+    title: "Web & App Dev",
+    desc: "Modern websites in React/Next.js and cross-platform mobile apps in React Native and Flutter — built to scale.",
   },
   {
     Icon: Globe2,
-    title: "Multi-region",
-    desc: "Deploy across regions and clouds with traffic shifting, canaries and blue/green out of the box.",
+    title: "Multi-cloud",
+    desc: "We architect across AWS, Azure and GCP — multi-region failover, traffic shifting and cost-optimized landing zones.",
   },
   {
     Icon: GitBranch,
-    title: "GitOps native",
-    desc: "Every change is a pull request. Drift detection, preview environments and automatic reconciliation.",
+    title: "Infrastructure as Code",
+    desc: "Terraform, Ansible and GitOps workflows so every change is a pull request — reviewed, versioned and reproducible.",
   },
 ];
 
@@ -56,13 +56,13 @@ export const Features = () => {
     <section id="features" className="relative py-24 md:py-32 bg-gradient-soft">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-14">
-          <p className="text-xs font-mono uppercase tracking-[0.2em] text-primary mb-3">Platform</p>
+          <p className="text-xs font-mono uppercase tracking-[0.2em] text-primary mb-3">Capabilities</p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
-            Everything your SRE team needs, in one platform.
+            Everything your SRE team needs — delivered as a service.
           </h2>
           <p className="text-base md:text-lg text-muted-foreground mt-4 leading-relaxed">
-            InfraRise Cloud replaces a dozen point tools with one cohesive control plane — so engineers stop
-            stitching pipelines and start shipping reliable software.
+            We bring the tooling, the expertise and the on-call coverage. You get a senior engineering
+            team that owns your infrastructure end-to-end — without the cost of hiring one.
           </p>
         </div>
 

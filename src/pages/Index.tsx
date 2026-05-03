@@ -157,10 +157,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>InfraRise Cloud — The DevOps platform for production teams | InfraRise Technologies</title>
+        <title>InfraRise Technologies — DevOps, Cloud, Kubernetes & SRE Services</title>
         <meta
           name="description"
-          content="InfraRise Cloud is the DevOps platform for teams running production. Unified CI/CD pipelines, managed Kubernetes, SUSE Linux patching and observability. Request early access."
+          content="InfraRise Technologies is your engineering partner for DevOps, Cloud, Kubernetes, SRE, Linux/SAP on SUSE, CI/CD, web and mobile development. We design, deploy and operate your systems end-to-end."
         />
         <meta
           name="keywords"
