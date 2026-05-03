@@ -7,7 +7,7 @@ const cases = [
     key: "startups",
     label: "Startups",
     title: "Ship to production from day one.",
-    desc: "Spin up cloud-native infra, CI/CD and observability in hours, not quarters. Stay focused on building product while InfraRise Cloud handles the platform.",
+    desc: "We set up your cloud-native infra, CI/CD and observability in days, not quarters — so your founders and engineers can stay focused on building product, not plumbing.",
     bullets: ["One-command environment provisioning", "Preview envs for every PR", "Auto-scaling EKS / AKS clusters"],
   },
   {
@@ -15,7 +15,7 @@ const cases = [
     key: "enterprise",
     label: "Enterprise",
     title: "Modernize legacy estates without the risk.",
-    desc: "Bring SAP, RHEL and SUSE workloads under a single control plane. Add policy, audit and compliance without rewriting your stack.",
+    desc: "We help you migrate and modernize SAP, RHEL and SUSE workloads — adding policy, audit and compliance without rewriting your stack or disrupting business.",
     bullets: ["SAP on SUSE Linux HA clusters", "Centralized RBAC & audit logs", "Hybrid AWS + Azure + on-prem"],
   },
   {
@@ -23,7 +23,7 @@ const cases = [
     key: "regulated",
     label: "Regulated",
     title: "Compliance built into every deploy.",
-    desc: "Continuous controls for SOC 2, ISO 27001, HIPAA and PCI. Every change is signed, scanned and traceable end-to-end.",
+    desc: "We implement continuous controls for SOC 2, ISO 27001, HIPAA and PCI — so every change is signed, scanned and traceable end-to-end.",
     bullets: ["Signed builds & SBOMs", "Automatic CVE remediation", "Tamper-proof audit trail"],
   },
   {
@@ -31,7 +31,7 @@ const cases = [
     key: "data",
     label: "Data & AI",
     title: "Production-grade infra for ML workloads.",
-    desc: "GPU-backed Kubernetes, vector store integrations and reproducible pipelines for training and serving — without the YAML.",
+    desc: "We build GPU-backed Kubernetes, vector store integrations and reproducible pipelines for training and serving — so your data team ships models, not tickets.",
     bullets: ["GPU node pools on demand", "Model registry & rollouts", "Cost guardrails per workload"],
   },
 ];
@@ -44,9 +44,9 @@ export const UseCases = () => {
     <section id="use-cases" className="relative py-24 md:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12">
-          <p className="text-xs font-mono uppercase tracking-[0.2em] text-primary mb-3">Use cases</p>
+          <p className="text-xs font-mono uppercase tracking-[0.2em] text-primary mb-3">Industries</p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
-            Built for the teams running production.
+            Trusted by teams running production.
           </h2>
         </div>
 

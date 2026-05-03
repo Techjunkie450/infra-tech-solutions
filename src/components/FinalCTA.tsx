@@ -10,10 +10,11 @@ export const FinalCTA = () => {
           <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-primary-foreground/10 blur-3xl pointer-events-none" />
           <div className="relative text-center max-w-3xl mx-auto space-y-6">
             <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-              Ready to Build Something Great?
+              Let's build your infrastructure, together.
             </h2>
             <p className="text-base md:text-lg text-primary-foreground/90 leading-relaxed">
-              Let's discuss your project. Whether it's web, mobile, cloud infrastructure, or a combination — we'll craft the perfect solution.
+              Whether it's a CI/CD overhaul, a Kubernetes migration, SAP on SUSE, or a new web or
+              mobile product — we'll design the right solution and operate it with you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2">
               <Button asChild size="lg" variant="secondary" className="px-8 py-6 text-base font-semibold group">

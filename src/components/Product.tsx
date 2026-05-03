@@ -33,23 +33,23 @@ export const Product = () => {
           <div className="space-y-7">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1 text-xs font-mono uppercase tracking-wider text-muted-foreground">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              Now in early access · v2.14
+              How we work · End-to-end engagement
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight">
-              The platform for <span className="text-gradient-animated">DevOps teams</span> that ship faster.
+              An extension of your <span className="text-gradient-animated">engineering team</span>.
             </h2>
 
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">
-              InfraRise Cloud unifies your CI/CD pipelines, Kubernetes clusters, Linux server patching and observability
-              into one operator-friendly platform — purpose-built for production workloads on AWS, Azure and SUSE.
+              We don't sell a tool. We embed with your team to architect, automate and operate the
+              systems that run your business — across AWS, Azure, Kubernetes, SUSE Linux and beyond.
             </p>
 
             <ul className="space-y-2 max-w-lg">
               {[
-                { Icon: GitBranch, t: "Unified pipelines for Jenkins, GitHub Actions & ArgoCD" },
-                { Icon: Boxes, t: "Managed Kubernetes (EKS, AKS, GKE) with one-click rollbacks" },
-                { Icon: ShieldCheck, t: "Automated patching for RHEL, SUSE & Ubuntu fleets" },
+                { Icon: GitBranch, t: "We design CI/CD pipelines on Jenkins, GitHub Actions & GitLab" },
+                { Icon: Boxes, t: "We deploy & operate Kubernetes clusters on EKS, AKS and GKE" },
+                { Icon: ShieldCheck, t: "We patch & maintain RHEL, SUSE and Ubuntu server fleets" },
               ].map(({ Icon, t }, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm md:text-base text-foreground/90">
                   <Icon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
@@ -61,17 +61,17 @@ export const Product = () => {
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Button asChild size="lg" className="bg-gradient-primary text-primary-foreground hover:opacity-95 group">
                 <a href="#contact">
-                  Request early access
+                  Start a project
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-2">
-                <a href="#features">Explore the platform</a>
+                <a href="#services">See our services</a>
               </Button>
             </div>
 
             <p className="text-xs text-muted-foreground font-mono pt-2">
-              No credit card · Talk to a solutions engineer
+              No obligation · Free 30-min architecture review
             </p>
           </div>
 
@@ -88,7 +88,7 @@ export const Product = () => {
                 </div>
                 <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-wider text-white/50">
                   <Terminal className="w-3 h-3" />
-                  infrarise · prod
+                  client-prod · managed by InfraRise
                 </div>
                 <span className="text-[10px] font-mono text-white/40">zsh</span>
               </div>
