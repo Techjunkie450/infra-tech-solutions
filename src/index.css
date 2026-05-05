@@ -9,13 +9,13 @@
 
 @layer base {
   :root {
-    --background: 220 30% 97%;
+    --background: 220 33% 95%;
     --foreground: 222 47% 11%;
 
-    --card: 220 35% 99%;
+    --card: 220 40% 99%;
     --card-foreground: 222 47% 11%;
 
-    --popover: 220 35% 99%;
+    --popover: 220 40% 99%;
     --popover-foreground: 222 47% 11%;
 
     /* Brand: deep indigo */
@@ -27,30 +27,30 @@
     --accent: 190 95% 45%;
     --accent-foreground: 222 47% 11%;
 
-    --secondary: 220 30% 94%;
+    --secondary: 220 32% 92%;
     --secondary-foreground: 222 47% 11%;
 
-    --muted: 220 25% 93%;
+    --muted: 220 28% 91%;
     --muted-foreground: 220 12% 42%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 22% 88%;
-    --input: 220 22% 88%;
+    --border: 220 22% 86%;
+    --input: 220 22% 86%;
     --ring: 224 76% 48%;
 
     --radius: 0.75rem;
 
     /* Surfaces */
-    --surface: 220 30% 96%;
-    --surface-2: 222 35% 92%;
+    --surface: 220 32% 94%;
+    --surface-2: 222 38% 90%;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(224 76% 48%), hsl(262 70% 55%));
     --gradient-accent: linear-gradient(135deg, hsl(190 95% 45%), hsl(224 76% 48%));
     --gradient-hero: linear-gradient(135deg, hsl(224 76% 48%) 0%, hsl(262 70% 55%) 50%, hsl(190 95% 45%) 100%);
-    --gradient-soft: linear-gradient(180deg, hsl(220 35% 97%), hsl(222 40% 92%));
+    --gradient-soft: linear-gradient(180deg, hsl(220 35% 96%), hsl(222 42% 90%));
 
     /* Shadows */
     --shadow-sm: 0 1px 2px hsl(224 30% 20% / 0.06);
