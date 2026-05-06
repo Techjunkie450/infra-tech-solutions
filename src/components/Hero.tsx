@@ -174,7 +174,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-gradient-soft"
+      className="relative flex items-center pt-24 pb-14 md:pb-16 overflow-hidden bg-gradient-soft"
     >
       {/* Decorative gradient orbs */}
       <div className="absolute inset-0 pointer-events-none">
@@ -212,6 +212,14 @@ export const Hero = () => {
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
               We design, deploy and operate your cloud infrastructure, CI/CD pipelines and Kubernetes
               workloads — so your team can focus on building products, not managing systems.
+            </p>
+
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
+              At <strong className="text-foreground">InfraRise Technologies</strong> we work as an
+              extension of your engineering team — covering everything from AWS &amp; Azure cloud setup,
+              Kubernetes orchestration, Linux &amp; SUSE administration, CI/CD automation, server
+              patching, website &amp; mobile app development, cybersecurity hardening and AI/ML
+              enablement. One trusted partner, end-to-end ownership, founder-led delivery.
             </p>
 
             {/* Capability chips (replaces company-count proof points) */}

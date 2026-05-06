@@ -41,13 +41,18 @@ export const UseCases = () => {
   const c = cases[active];
 
   return (
-    <section id="use-cases" className="relative py-24 md:py-32 bg-background">
+    <section id="use-cases" className="relative py-16 md:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-12">
+        <div className="max-w-3xl mb-10">
           <p className="text-xs font-mono uppercase tracking-[0.2em] text-primary mb-3">Industries</p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
             Trusted by teams running production.
           </h2>
+          <p className="text-base md:text-lg text-muted-foreground mt-4 leading-relaxed">
+            Whether you're a startup shipping your first product, an enterprise modernizing decades
+            of legacy estate, or a regulated team fighting through audits — we tailor the engagement
+            to where you are today and where you want to be next quarter.
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-[280px_1fr] gap-8">

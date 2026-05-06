@@ -3,7 +3,7 @@ import { Calendar, Mail, ArrowRight } from "lucide-react";
 
 export const FinalCTA = () => {
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-soft">
+    <section className="relative py-16 md:py-20 overflow-hidden bg-gradient-soft">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="relative rounded-3xl overflow-hidden p-10 md:p-16 bg-gradient-primary text-primary-foreground shadow-elegant">
           <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-primary-foreground/10 blur-3xl pointer-events-none" />
