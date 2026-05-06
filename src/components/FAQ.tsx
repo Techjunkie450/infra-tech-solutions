@@ -33,27 +33,31 @@ export const FAQ = () => {
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-32 left-1/3 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
       </div>
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Frequently Asked <span className="text-gradient-primary">Questions</span>
           </h2>
           <p className="text-lg text-muted-foreground">Common questions about working with InfraRise.</p>
         </div>
-        <Accordion type="single" collapsible className="space-y-3">
-          {faqs.map((f, i) => (
-            <AccordionItem
-              key={i}
-              value={`item-${i}`}
-              className="border border-border rounded-xl bg-card px-5 shadow-sm"
-            >
-              <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-foreground hover:no-underline">
-                {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed">{f.a}</AccordionContent>
-            </AccordionItem>
+        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+          {[faqs.slice(0, Math.ceil(faqs.length / 2)), faqs.slice(Math.ceil(faqs.length / 2))].map((col, ci) => (
+            <Accordion key={ci} type="single" collapsible className="space-y-3">
+              {col.map((f, i) => (
+                <AccordionItem
+                  key={i}
+                  value={`item-${ci}-${i}`}
+                  className="border border-border rounded-xl bg-card px-5 shadow-sm"
+                >
+                  <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-foreground hover:no-underline">
+                    {f.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed">{f.a}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           ))}
-        </Accordion>
+        </div>
       </div>
     </section>
   );
