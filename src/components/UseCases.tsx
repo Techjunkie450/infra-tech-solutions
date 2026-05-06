@@ -43,19 +43,21 @@ export const UseCases = () => {
   return (
     <section id="use-cases" className="relative py-16 md:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-10">
-          <p className="text-xs font-mono uppercase tracking-[0.2em] text-primary mb-3">Industries</p>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
-            Trusted by teams running production.
-          </h2>
-          <p className="text-base md:text-lg text-muted-foreground mt-4 leading-relaxed">
+        <div className="grid lg:grid-cols-2 gap-10 mb-10 items-end">
+          <div>
+            <p className="text-xs font-mono uppercase tracking-[0.2em] text-primary mb-3">Industries</p>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+              Trusted by teams running production.
+            </h2>
+          </div>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
             Whether you're a startup shipping your first product, an enterprise modernizing decades
             of legacy estate, or a regulated team fighting through audits — we tailor the engagement
             to where you are today and where you want to be next quarter.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-[280px_1fr] gap-8">
+        <div className="grid lg:grid-cols-[240px_1fr] gap-6">
           {/* Tabs */}
           <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible">
             {cases.map((tab, i) => {
@@ -84,19 +86,27 @@ export const UseCases = () => {
             className="rounded-2xl border border-border bg-card p-8 md:p-10 shadow-sm"
             style={{ animation: "fadeSlideIn 0.4s ease-out" }}
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">{c.title}</h3>
-            <p className="text-base text-muted-foreground mt-3 leading-relaxed max-w-2xl">{c.desc}</p>
-            <ul className="mt-6 grid sm:grid-cols-2 gap-3">
-              {c.bullets.map((b, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-2 text-sm text-foreground/90 rounded-lg border border-border bg-secondary/40 px-4 py-3"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-                  {b}
-                </li>
-              ))}
-            </ul>
+            <div className="grid md:grid-cols-2 gap-8 items-start">
+              <div>
+                <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full bg-primary/10 text-primary">
+                  <c.Icon className="w-4 h-4" />
+                  <span className="text-xs font-mono uppercase tracking-wider">{c.label}</span>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">{c.title}</h3>
+                <p className="text-base text-muted-foreground mt-3 leading-relaxed">{c.desc}</p>
+              </div>
+              <ul className="space-y-3">
+                {c.bullets.map((b, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-sm text-foreground/90 rounded-lg border border-border bg-secondary/40 px-4 py-3"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
