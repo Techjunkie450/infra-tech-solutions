@@ -15,7 +15,7 @@ export const About = () => {
   ];
 
   return (
-    <section id="about" className="relative py-20 bg-gradient-soft overflow-hidden">
+    <section id="about" className="relative py-16 md:py-20 bg-gradient-soft overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-accent/10 blur-3xl" />
@@ -32,6 +32,13 @@ export const About = () => {
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 From web and mobile apps to AWS/Azure cloud, DevOps, Linux/SUSE administration, CI/CD, security and AI/ML — founders stay involved end-to-end. Honest pricing, flexible terms, real partnership.
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed mt-4">
+                Our team has spent the last decade running production for SaaS startups,
+                e-commerce platforms, SAP-on-SUSE environments, healthcare portals and fintech
+                APIs. That hands-on experience is what we bring into every engagement — not
+                templates, not playbooks built by someone else, but real patterns we've battle-
+                tested through outages, audits, migrations and 3 AM pages.
               </p>
             </div>
 

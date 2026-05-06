@@ -53,16 +53,18 @@ const features = [
 
 export const Features = () => {
   return (
-    <section id="features" className="relative py-24 md:py-32 bg-gradient-soft">
+    <section id="features" className="relative py-16 md:py-20 bg-gradient-soft">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-14">
+        <div className="max-w-3xl mb-10">
           <p className="text-xs font-mono uppercase tracking-[0.2em] text-primary mb-3">Capabilities</p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
             Everything your SRE team needs — delivered as a service.
           </h2>
           <p className="text-base md:text-lg text-muted-foreground mt-4 leading-relaxed">
             We bring the tooling, the expertise and the on-call coverage. You get a senior engineering
-            team that owns your infrastructure end-to-end — without the cost of hiring one.
+            team that owns your infrastructure end-to-end — without the cost of hiring one. Each
+            capability below is something we have already built, broken, fixed and run in production
+            for real clients across SaaS, fintech, healthcare and SAP environments.
           </p>
         </div>
 

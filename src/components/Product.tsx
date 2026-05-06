@@ -13,7 +13,7 @@ const codeLines = [
 
 export const Product = () => {
   return (
-    <section id="product" className="relative py-24 md:py-32 bg-background overflow-hidden">
+    <section id="product" className="relative py-16 md:py-20 bg-background overflow-hidden">
       {/* Background grid + glow (Stripe/Qdrant inspired) */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -43,6 +43,14 @@ export const Product = () => {
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">
               We don't sell a tool. We embed with your team to architect, automate and operate the
               systems that run your business — across AWS, Azure, Kubernetes, SUSE Linux and beyond.
+            </p>
+
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-xl">
+              Most teams we work with are tired of stitching together five different vendors for
+              cloud, DevOps, Linux servers, websites and security. We replace that mess with one
+              senior engineering team that already knows your stack — and stays accountable for
+              outcomes, not just hours billed. From day one, you get architecture decisions made by
+              engineers who've shipped at scale, not slide decks.
             </p>
 
             <ul className="space-y-2 max-w-lg">
