@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, Bot, User, Phone, Trash2, Sparkles } from "lucide-react";
+import { MessageCircle, X, Send, Bot, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
@@ -10,14 +10,11 @@ type Message = {
   role: "bot" | "user";
   content: string;
   quickReplies?: QuickReply[];
-  ts?: number;
 };
 
 const PHONE = "+918769560336";
 const WHATSAPP = "918769560336";
 const EMAIL = "hello@infrarisetech.com";
-const STORAGE_KEY = "infrabot:history:v1";
-const SEEN_KEY = "infrabot:seen:v1";
 
 const flow: Record<string, () => Message> = {
   start: () => ({
@@ -131,7 +128,6 @@ const flow: Record<string, () => Message> = {
       "📞 You can reach our team via:\n\n• Email: hello@infrarisetech.com\n• Phone: +91-8769560336\n• WhatsApp: instant chat\n\nOr fill the contact form on this page.",
     quickReplies: [
       { label: "💬 WhatsApp", value: "whatsapp" },
-      { label: "📱 Call Now", value: "call" },
       { label: "✉️ Email Us", value: "email" },
       { label: "📋 Open Contact Form", value: "form" },
       { label: "← Back", value: "start" },
@@ -163,18 +159,6 @@ const flow: Record<string, () => Message> = {
       quickReplies: [
         { label: "Services", value: "services" },
         { label: "Contact", value: "contact" },
-        { label: "← Start", value: "start" },
-      ],
-    };
-  },
-  call: () => {
-    window.location.href = `tel:${PHONE}`;
-    return {
-      id: crypto.randomUUID(),
-      role: "bot",
-      content: "Dialing +91 8769560336… 📞 We're available Mon–Fri, 8am–6pm IST.",
-      quickReplies: [
-        { label: "WhatsApp Instead", value: "whatsapp" },
         { label: "← Start", value: "start" },
       ],
     };
@@ -223,74 +207,26 @@ function matchKeyword(text: string): string | null {
 
 export const ChatBot = () => {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>(() => {
-    if (typeof window === "undefined") return [{ ...flow.start(), ts: Date.now() }];
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw) as Message[];
-        if (Array.isArray(parsed) && parsed.length) return parsed;
-      }
-    } catch {}
-    return [{ ...flow.start(), ts: Date.now() }];
-  });
+  const [messages, setMessages] = useState<Message[]>([flow.start()]);
   const [input, setInput] = useState("");
-  const [typing, setTyping] = useState(false);
-  const [showTeaser, setShowTeaser] = useState(false);
-  const [unread, setUnread] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
-  }, [messages, open, typing]);
-
-  // Persist conversation
-  useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(messages.slice(-40)));
-    } catch {}
-  }, [messages]);
-
-  // Show welcome teaser on first visit after a short delay
-  useEffect(() => {
-    const seen = localStorage.getItem(SEEN_KEY);
-    if (seen) return;
-    const t = setTimeout(() => setShowTeaser(true), 4000);
-    return () => clearTimeout(t);
-  }, []);
-
-  // Auto-focus input when opened
-  useEffect(() => {
-    if (open) {
-      setUnread(0);
-      setShowTeaser(false);
-      localStorage.setItem(SEEN_KEY, "1");
-      setTimeout(() => inputRef.current?.focus(), 200);
-    }
-  }, [open]);
-
-  const pushBotMessage = (msg: Message, delay = 600) => {
-    setTyping(true);
-    setTimeout(() => {
-      setTyping(false);
-      setMessages((prev) => [...prev, { ...msg, ts: Date.now() }]);
-      if (!open) setUnread((u) => u + 1);
-    }, delay);
-  };
+  }, [messages, open]);
 
   const handleAction = (value: string) => {
     const next = flow[value];
     if (!next) return;
-    pushBotMessage(next());
+    setTimeout(() => setMessages((prev) => [...prev, next()]), 250);
   };
 
   const handleQuickReply = (qr: QuickReply) => {
     setMessages((prev) => [
       ...prev,
-      { id: crypto.randomUUID(), role: "user", content: qr.label, ts: Date.now() },
+      { id: crypto.randomUUID(), role: "user", content: qr.label },
     ]);
     handleAction(qr.value);
   };
@@ -300,80 +236,42 @@ export const ChatBot = () => {
     if (!trimmed) return;
     setMessages((prev) => [
       ...prev,
-      { id: crypto.randomUUID(), role: "user", content: trimmed, ts: Date.now() },
+      { id: crypto.randomUUID(), role: "user", content: trimmed },
     ]);
     setInput("");
-    const key = matchKeyword(trimmed);
-    if (!key) {
-      pushBotMessage({
-        id: crypto.randomUUID(),
-        role: "bot",
-        content:
-          "I didn't quite catch that. Here's how I can help — pick an option below or try keywords like 'cloud', 'devops', 'pricing', 'contact':",
-        quickReplies: flow.start().quickReplies,
-      });
+    const key = matchKeyword(trimmed) ?? "start";
+    if (!matchKeyword(trimmed)) {
+      setTimeout(
+        () =>
+          setMessages((prev) => [
+            ...prev,
+            {
+              id: crypto.randomUUID(),
+              role: "bot",
+              content:
+                "I didn't quite catch that. Here's how I can help — pick an option:",
+              quickReplies: flow.start().quickReplies,
+            },
+          ]),
+        300
+      );
     } else {
       handleAction(key);
     }
   };
 
-  const handleClear = () => {
-    const fresh = { ...flow.start(), ts: Date.now() };
-    setMessages([fresh]);
-  };
-
-  const formatTime = (ts?: number) => {
-    if (!ts) return "";
-    const d = new Date(ts);
-    return d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-  };
-
   return (
     <>
-      {/* Welcome teaser bubble */}
-      {!open && showTeaser && (
-        <div className="fixed bottom-24 right-6 z-[60] max-w-[260px] animate-in slide-in-from-bottom-2 fade-in duration-500">
-          <button
-            onClick={() => setOpen(true)}
-            className="relative bg-card border border-border shadow-elegant rounded-2xl rounded-br-sm px-4 py-3 text-left hover:shadow-glow transition-shadow"
-          >
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setShowTeaser(false);
-                localStorage.setItem(SEEN_KEY, "1");
-              }}
-              className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-secondary border border-border flex items-center justify-center text-muted-foreground hover:text-foreground"
-              aria-label="Dismiss"
-            >
-              <X className="w-3 h-3" />
-            </button>
-            <div className="flex items-center gap-2 mb-1">
-              <Sparkles className="w-3.5 h-3.5 text-primary" />
-              <span className="text-xs font-semibold text-primary">InfraBot</span>
-            </div>
-            <p className="text-sm text-foreground leading-snug">
-              👋 Need help with cloud, DevOps, or a website? Ask me anything!
-            </p>
-          </button>
-        </div>
-      )}
-
       {/* Floating button */}
       <button
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? "Close chat" : "Open chat"}
         className={cn(
-          "fixed bottom-6 right-6 z-[60] w-14 h-14 rounded-full shadow-xl flex items-center justify-center transition-all hover:scale-110 relative",
+          "fixed bottom-6 right-6 z-[60] w-14 h-14 rounded-full shadow-xl flex items-center justify-center transition-all hover:scale-110",
           "bg-gradient-primary text-primary-foreground animate-pulse-glow"
         )}
       >
         {open ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
-        {!open && unread > 0 && (
-          <span className="absolute -top-1 -right-1 min-w-5 h-5 px-1 rounded-full bg-destructive text-destructive-foreground text-[10px] font-bold flex items-center justify-center border-2 border-background">
-            {unread}
-          </span>
-        )}
       </button>
 
       {/* Chat window */}
@@ -394,24 +292,9 @@ export const ChatBot = () => {
               <div className="font-semibold text-sm">InfraBot</div>
               <div className="text-xs opacity-90 flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                {typing ? "Typing…" : "Online · Replies instantly"}
+                Online · Replies instantly
               </div>
             </div>
-            <a
-              href={`tel:${PHONE}`}
-              aria-label="Call us"
-              className="w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-            </a>
-            <button
-              onClick={handleClear}
-              aria-label="Clear conversation"
-              className="w-8 h-8 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors"
-              title="Clear chat"
-            >
-              <Trash2 className="w-4 h-4" />
-            </button>
           </div>
 
           {/* Messages */}
@@ -430,20 +313,15 @@ export const ChatBot = () => {
                         <Bot className="w-4 h-4 text-primary-foreground" />
                       </div>
                     )}
-                    <div className={cn("max-w-[75%]", m.role === "user" ? "items-end" : "items-start", "flex flex-col gap-0.5")}>
-                      <div
-                        className={cn(
-                          "rounded-2xl px-3.5 py-2 text-sm whitespace-pre-line",
-                          m.role === "bot"
-                            ? "bg-secondary text-foreground rounded-tl-sm"
-                            : "bg-primary text-primary-foreground rounded-tr-sm"
-                        )}
-                      >
-                        {m.content}
-                      </div>
-                      {m.ts && (
-                        <span className="text-[10px] text-muted-foreground px-1">{formatTime(m.ts)}</span>
+                    <div
+                      className={cn(
+                        "max-w-[75%] rounded-2xl px-3.5 py-2 text-sm whitespace-pre-line",
+                        m.role === "bot"
+                          ? "bg-secondary text-foreground rounded-tl-sm"
+                          : "bg-primary text-primary-foreground rounded-tr-sm"
                       )}
+                    >
+                      {m.content}
                     </div>
                     {m.role === "user" && (
                       <div className="w-7 h-7 rounded-full bg-secondary flex items-center justify-center shrink-0">
@@ -466,25 +344,12 @@ export const ChatBot = () => {
                   )}
                 </div>
               ))}
-              {typing && (
-                <div className="flex gap-2 justify-start">
-                  <div className="w-7 h-7 rounded-full bg-gradient-primary flex items-center justify-center shrink-0">
-                    <Bot className="w-4 h-4 text-primary-foreground" />
-                  </div>
-                  <div className="bg-secondary text-foreground rounded-2xl rounded-tl-sm px-4 py-3 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/70 animate-bounce" style={{ animationDelay: "0ms" }} />
-                    <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/70 animate-bounce" style={{ animationDelay: "150ms" }} />
-                    <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/70 animate-bounce" style={{ animationDelay: "300ms" }} />
-                  </div>
-                </div>
-              )}
             </div>
           </ScrollArea>
 
           {/* Input */}
           <div className="border-t border-border/60 bg-background/80 p-2 flex gap-2">
             <input
-              ref={inputRef}
               value={input}
               onChange={(e) => setInput(e.target.value.slice(0, 300))}
               onKeyDown={(e) => e.key === "Enter" && handleSend()}
