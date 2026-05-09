@@ -53,11 +53,11 @@ const features = [
 
 export const Features = () => {
   return (
-    <section id="features" className="relative py-16 md:py-20 bg-gradient-soft">
+    <section id="features" className="relative py-10 md:py-14 bg-gradient-soft">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-10">
+        <div className="max-w-3xl mb-6">
           <p className="text-xs font-mono uppercase tracking-[0.2em] text-primary mb-3">Capabilities</p>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
             Everything your SRE team needs — delivered as a service.
           </h2>
           <p className="text-base md:text-lg text-muted-foreground mt-4 leading-relaxed">

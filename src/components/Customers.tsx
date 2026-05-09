@@ -2,7 +2,7 @@ import { Quote } from "lucide-react";
 
 export const Customers = () => {
   return (
-    <section id="customers" className="relative py-16 md:py-20 bg-gradient-soft border-y border-border">
+    <section id="customers" className="relative py-10 md:py-14 bg-gradient-soft border-y border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Featured quote */}
         <div className="max-w-4xl mx-auto rounded-2xl border border-border bg-card p-8 md:p-12 shadow-sm">

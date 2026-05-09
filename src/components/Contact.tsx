@@ -14,14 +14,14 @@ export const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="relative py-16 md:py-20 bg-gradient-soft overflow-hidden">
+    <section id="contact" className="relative py-10 md:py-14 bg-gradient-soft overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-accent/10 blur-3xl" />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Get In <span className="text-gradient-primary">Touch</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
