@@ -95,7 +95,7 @@ export const Portfolio = () => {
         </div>
 
         {/* Coverflow slider */}
-        <div className="relative h-[480px] md:h-[520px]" style={{ perspective: "1400px" }}>
+        <div className="relative h-[400px] md:h-[440px]" style={{ perspective: "1400px" }}>
           <div className="relative w-full h-full flex items-center justify-center" style={{ transformStyle: "preserve-3d" }}>
             {projects.map((project, i) => {
               const offset = getOffset(i);
@@ -120,7 +120,7 @@ export const Portfolio = () => {
                   }}
                   aria-hidden={offset !== 0}
                 >
-                  <div className="relative overflow-hidden h-48 md:h-56">
+                  <div className="relative overflow-hidden h-40 md:h-44">
                     <img
                       src={project.image}
                       alt={`${project.title} — ${project.category} project by InfraRise Technologies`}
@@ -132,7 +132,7 @@ export const Portfolio = () => {
                       {project.category}
                     </span>
                   </div>
-                  <CardContent className="p-6">
+                  <CardContent className="p-5">
                     <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">{project.title}</h3>
                     <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{project.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
