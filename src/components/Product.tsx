@@ -13,7 +13,7 @@ const codeLines = [
 
 export const Product = () => {
   return (
-    <section id="product" className="relative py-16 md:py-20 bg-background overflow-hidden">
+    <section id="product" className="relative py-10 md:py-14 bg-background overflow-hidden">
       {/* Background grid + glow (Stripe/Qdrant inspired) */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -28,7 +28,7 @@ export const Product = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left copy */}
           <div className="space-y-7">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3 py-1 text-xs font-mono uppercase tracking-wider text-muted-foreground">

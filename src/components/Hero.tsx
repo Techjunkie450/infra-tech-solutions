@@ -174,7 +174,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex items-center pt-24 pb-14 md:pb-16 overflow-hidden bg-gradient-soft"
+      className="relative flex items-center pt-20 pb-10 md:pt-24 md:pb-12 overflow-hidden bg-gradient-soft"
     >
       {/* Decorative gradient orbs */}
       <div className="absolute inset-0 pointer-events-none">
@@ -198,13 +198,13 @@ export const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text column */}
-          <div className="space-y-7 text-center lg:text-left" style={{ animation: "fadeSlideIn 0.8s ease-out" }}>
+          <div className="space-y-5 text-center lg:text-left" style={{ animation: "fadeSlideIn 0.8s ease-out" }}>
             <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs font-semibold tracking-wider uppercase text-primary">
               <Sparkles className="w-3.5 h-3.5" />
               DevOps · Cloud · SRE Services
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05] tracking-tight">
               <span className="text-foreground">Your engineering partner for</span>
               <span className="block text-gradient-animated">cloud, DevOps & SRE.</span>
             </h1>
@@ -265,7 +265,7 @@ export const Hero = () => {
 
           {/* Visual column */}
           <div
-            className="flex items-center justify-center min-h-[480px]"
+            className="flex items-center justify-center min-h-[380px]"
             style={{ animation: "fadeSlideIn 1s ease-out 0.2s both" }}
           >
             <HeroVisual />

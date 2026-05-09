@@ -41,12 +41,12 @@ export const UseCases = () => {
   const c = cases[active];
 
   return (
-    <section id="use-cases" className="relative py-16 md:py-20 bg-background">
+    <section id="use-cases" className="relative py-10 md:py-14 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-10 mb-10 items-end">
+        <div className="grid lg:grid-cols-2 gap-10 mb-6 items-end">
           <div>
             <p className="text-xs font-mono uppercase tracking-[0.2em] text-primary mb-3">Industries</p>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
               Trusted by teams running production.
             </h2>
           </div>

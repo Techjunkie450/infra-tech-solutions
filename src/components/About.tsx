@@ -15,16 +15,16 @@ export const About = () => {
   ];
 
   return (
-    <section id="about" className="relative py-16 md:py-20 bg-gradient-soft overflow-hidden">
+    <section id="about" className="relative py-10 md:py-14 bg-gradient-soft overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-accent/10 blur-3xl" />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="space-y-8">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 About <span className="text-gradient-primary">InfraRise Technologies</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">

@@ -79,14 +79,14 @@ export const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="relative py-16 md:py-20 bg-gradient-soft overflow-hidden">
+    <section id="portfolio" className="relative py-10 md:py-14 bg-gradient-soft overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-accent/10 blur-3xl" />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Our <span className="text-gradient-primary">Portfolio</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -95,7 +95,7 @@ export const Portfolio = () => {
         </div>
 
         {/* Coverflow slider */}
-        <div className="relative h-[480px] md:h-[520px]" style={{ perspective: "1400px" }}>
+        <div className="relative h-[400px] md:h-[440px]" style={{ perspective: "1400px" }}>
           <div className="relative w-full h-full flex items-center justify-center" style={{ transformStyle: "preserve-3d" }}>
             {projects.map((project, i) => {
               const offset = getOffset(i);
@@ -120,7 +120,7 @@ export const Portfolio = () => {
                   }}
                   aria-hidden={offset !== 0}
                 >
-                  <div className="relative overflow-hidden h-48 md:h-56">
+                  <div className="relative overflow-hidden h-40 md:h-44">
                     <img
                       src={project.image}
                       alt={`${project.title} — ${project.category} project by InfraRise Technologies`}
@@ -132,7 +132,7 @@ export const Portfolio = () => {
                       {project.category}
                     </span>
                   </div>
-                  <CardContent className="p-6">
+                  <CardContent className="p-5">
                     <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">{project.title}</h3>
                     <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{project.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
