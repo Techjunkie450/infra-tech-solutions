@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Contact = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -16,27 +17,31 @@ export const Contact = () => {
   const update = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.firstName || !form.email || !form.message) {
       toast({ title: "Missing details", description: "Please fill in your name, email and message.", variant: "destructive" });
       return;
     }
     setSubmitting(true);
-    const subject = `New enquiry from ${form.firstName} ${form.lastName}`.trim();
-    const body =
-      `Name: ${form.firstName} ${form.lastName}\n` +
-      `Email: ${form.email}\n` +
-      `Phone: ${form.phone}\n` +
-      `Company: ${form.company}\n` +
-      `Service: ${form.service}\n` +
-      `Budget: ${form.budget}\n` +
-      `Timeline: ${form.timeline}\n\n` +
-      `Message:\n${form.message}`;
-    const mailto = `mailto:hello@infrarisetech.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-    toast({ title: "Opening your email app", description: "We've prepared the message — just hit send." });
-    setTimeout(() => setSubmitting(false), 800);
+    const { error } = await supabase.from("contact_submissions").insert({
+      first_name: form.firstName,
+      last_name: form.lastName || null,
+      email: form.email,
+      phone: form.phone || null,
+      company: form.company || null,
+      service: form.service || null,
+      budget: form.budget || null,
+      timeline: form.timeline || null,
+      message: form.message,
+    });
+    setSubmitting(false);
+    if (error) {
+      toast({ title: "Could not send message", description: error.message, variant: "destructive" });
+      return;
+    }
+    toast({ title: "Message sent!", description: "Thanks — we'll get back to you within one business day." });
+    setForm({ firstName: "", lastName: "", email: "", phone: "", company: "", service: "", budget: "", timeline: "", message: "" });
   };
 
   const contactInfo = [
