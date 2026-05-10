@@ -12,10 +12,12 @@
     --background: 220 33% 95%;
     --foreground: 222 47% 11%;
 
-    --card: 220 40% 99%;
+    /* Card tinted slightly toward the brand so it harmonises with the
+       blue-grey background instead of looking like a stark white block. */
+    --card: 220 38% 97%;
     --card-foreground: 222 47% 11%;
 
-    --popover: 220 40% 99%;
+    --popover: 220 38% 97%;
     --popover-foreground: 222 47% 11%;
 
     /* Brand: deep indigo */
@@ -36,8 +38,8 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 22% 86%;
-    --input: 220 22% 86%;
+    --border: 220 25% 84%;
+    --input: 220 25% 84%;
     --ring: 224 76% 48%;
 
     --radius: 0.75rem;
