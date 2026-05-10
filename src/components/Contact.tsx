@@ -1,11 +1,44 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
 
 export const Contact = () => {
+  const [submitting, setSubmitting] = useState(false);
+  const [form, setForm] = useState({
+    firstName: "", lastName: "", email: "", phone: "",
+    company: "", service: "", budget: "", timeline: "", message: "",
+  });
+  const update = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
+    setForm((f) => ({ ...f, [k]: e.target.value }));
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.firstName || !form.email || !form.message) {
+      toast({ title: "Missing details", description: "Please fill in your name, email and message.", variant: "destructive" });
+      return;
+    }
+    setSubmitting(true);
+    const subject = `New enquiry from ${form.firstName} ${form.lastName}`.trim();
+    const body =
+      `Name: ${form.firstName} ${form.lastName}\n` +
+      `Email: ${form.email}\n` +
+      `Phone: ${form.phone}\n` +
+      `Company: ${form.company}\n` +
+      `Service: ${form.service}\n` +
+      `Budget: ${form.budget}\n` +
+      `Timeline: ${form.timeline}\n\n` +
+      `Message:\n${form.message}`;
+    const mailto = `mailto:hello@infrarisetech.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+    toast({ title: "Opening your email app", description: "We've prepared the message — just hit send." });
+    setTimeout(() => setSubmitting(false), 800);
+  };
+
   const contactInfo = [
     { icon: <Mail className="w-6 h-6" />, title: "Email Us", details: "hello@infrarisetech.com", description: "Send us an email anytime", href: "mailto:hello@infrarisetech.com" },
     { icon: <Phone className="w-6 h-6" />, title: "Call Us", details: "+91 8769560336", description: "Mon–Fri from 8am to 6pm", href: "tel:+918769560336" },
@@ -72,34 +105,35 @@ export const Contact = () => {
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-foreground">Send Us a Message</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="John" />
+                    <Input id="firstName" placeholder="John" value={form.firstName} onChange={update("firstName")} required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Doe" />
+                    <Input id="lastName" placeholder="Doe" value={form.lastName} onChange={update("lastName")} />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="john@example.com" />
+                    <Input id="email" type="email" placeholder="john@example.com" value={form.email} onChange={update("email")} required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone</Label>
-                    <Input id="phone" placeholder="+91 98765 43210" />
+                    <Input id="phone" placeholder="+91 98765 43210" value={form.phone} onChange={update("phone")} />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="company">Company</Label>
-                  <Input id="company" placeholder="Your Company Name" />
+                  <Input id="company" placeholder="Your Company Name" value={form.company} onChange={update("company")} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="service">Service Interested In</Label>
-                  <select id="service" className="w-full p-2 border border-input bg-background rounded-md focus:ring-2 focus:ring-ring focus:border-ring">
+                  <select id="service" value={form.service} onChange={update("service")} className="w-full p-2 border border-input bg-background rounded-md focus:ring-2 focus:ring-ring focus:border-ring">
                     <option value="">Select a service</option>
                     <option>Web Design & Development</option>
                     <option>Mobile App Development</option>
@@ -116,7 +150,7 @@ export const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="budget">Budget Range</Label>
-                    <select id="budget" className="w-full p-2 border border-input bg-background rounded-md focus:ring-2 focus:ring-ring focus:border-ring">
+                    <select id="budget" value={form.budget} onChange={update("budget")} className="w-full p-2 border border-input bg-background rounded-md focus:ring-2 focus:ring-ring focus:border-ring">
                       <option value="">Select range (optional)</option>
                       <option>Under $5K</option>
                       <option>$5K – $25K</option>
@@ -126,7 +160,7 @@ export const Contact = () => {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="timeline">Timeline</Label>
-                    <select id="timeline" className="w-full p-2 border border-input bg-background rounded-md focus:ring-2 focus:ring-ring focus:border-ring">
+                    <select id="timeline" value={form.timeline} onChange={update("timeline")} className="w-full p-2 border border-input bg-background rounded-md focus:ring-2 focus:ring-ring focus:border-ring">
                       <option value="">Select timeline</option>
                       <option>Just exploring</option>
                       <option>Within 3 months</option>
@@ -136,11 +170,12 @@ export const Contact = () => {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" placeholder="Tell us about your project requirements..." className="min-h-[120px]" />
+                  <Textarea id="message" placeholder="Tell us about your project requirements..." className="min-h-[120px]" value={form.message} onChange={update("message")} required />
                 </div>
-                <Button className="w-full bg-gradient-primary hover:opacity-90 text-primary-foreground py-6 text-base">
-                  Send Message
+                <Button type="submit" disabled={submitting} className="w-full bg-gradient-primary hover:opacity-90 text-primary-foreground py-6 text-base">
+                  {submitting ? "Sending..." : "Send Message"}
                 </Button>
+                </form>
               </CardContent>
             </Card>
           </div>
